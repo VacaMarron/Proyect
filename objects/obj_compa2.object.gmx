@@ -49,19 +49,7 @@ activado = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check_pressed(ord('A')) &amp;&amp; distance_to_object(obj_prota)&lt;70 &amp;&amp; arrastra=0 {
-arrastra = 1;
-}
-else if keyboard_check_pressed(ord('A')) &amp;&amp; arrastra=1 {
-arrastra = 0;
-}
-
-
-if arrastra=1{
-    x+=obj_prota.(hsp-10)
-    y+=obj_prota.(vsp-10)
-    }
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>

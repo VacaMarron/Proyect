@@ -31,8 +31,8 @@ contador=0;
 alarm[0]=1
 alarm[1]=1
 //Text and counts for strings
-texto0 = "Esto es un ejemplo222"
-texto1 = "Esto debería ser otro ejemplo #Cara culo de dos lineas"
+texto0 = "Esto es un           ejemplo222"
+texto1 = "Esto debería ser           otro ejemplo #Cara culo de dos lineas"
 texto3 = "Y esto es un ejemplo, a velocidad lenta"
 texto4 = "Bueno, tal vez"
 count1=0;
@@ -76,6 +76,9 @@ if contador==1 {
 if contador==2 {
     if (count2&lt;(string_length(texto1))) {
        count2+=1
+       if string_char_at(texto1,count2)!=" " {
+            audio_play_sound(sound0,10,false);
+       }
        }
 }
 if contador==3 {
@@ -232,7 +235,8 @@ if contador==1 {
 
 if contador==2 {
     draw_text(view_xview+20,view_yview+20,string_copy(texto1,1,count2));
-    if count2&lt;(string_length(texto1)) {audio_play_sound(sound0,10,false);} //When the string is being writted we make a sound
+    //if count2&lt;(string_length(texto1)) {audio_play_sound(sound0,10,false);} //When the string is being writted we make a sound
+    
     obj_desplaza.camaraON = 0; //Camera return
     count1=0;
     }
