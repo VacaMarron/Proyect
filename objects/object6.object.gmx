@@ -30,6 +30,14 @@ draw_text(view_xview+380,view_yview+20,obj_compa1.activo)
 if instance_exists(object0){
 draw_text(view_xview+300,view_yview+20,object0.contador)
 }
+draw_text(view_xview+240,view_yview+20,obj_player.collide);
+
+/*draw_line(view_xview,view_yview+208,view_xview+544,view_yview+208);
+draw_line(view_xview,view_yview+208-16,view_xview+544,view_yview+208-16);
+draw_line(view_xview,view_yview+208+16,view_xview+544,view_yview+208+16);
+draw_line(view_xview+272,view_yview,view_xview+272,view_yview+416);
+draw_line(view_xview+272-16,view_yview,view_xview+272-16,view_yview+416);
+draw_line(view_xview+272+16,view_yview,view_xview+272+16,view_yview+416);*/
 </string>
           </argument>
         </arguments>

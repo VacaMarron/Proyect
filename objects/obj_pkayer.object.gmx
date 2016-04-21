@@ -30,6 +30,7 @@ hsp = 0;
 vsp = 0;
 movex = 0;
 movey = 0;
+m=0
 </string>
           </argument>
         </arguments>
@@ -58,18 +59,52 @@ else{
     key_right = keyboard_check(vk_right) 
     key_left = keyboard_check(vk_left) 
     key_up = keyboard_check(vk_up) 
-    key_down = keyboard_check(vk_down) 
+    key_down = keyboard_check(vk_down)
 
+    
+    //Stand Right
+    if (!key_right &amp;&amp; Looking=="Right") 
+        || (Looking="Right" &amp;&amp; key_left)
+        || (Looking="Right" &amp;&amp; key_up)
+        || (Looking="Right" &amp;&amp; key_down){
+        sprite_index = spr_player_rs;
+    }
+    
+    //Stand Left
+    if (!key_left &amp;&amp; Looking=="Left") 
+        || (Looking="Left" &amp;&amp; key_right)
+        || (Looking="Left" &amp;&amp; key_up)
+        || (Looking="Left" &amp;&amp; key_down){
+        sprite_index = spr_player_ls;
+    }
+    
+    //Stand Up
+    if (!key_up &amp;&amp; Looking=="Up") 
+        || (Looking="Up" &amp;&amp; key_left)
+        || (Looking="Up" &amp;&amp; key_right)
+        || (Looking="Up" &amp;&amp; key_down){
+        sprite_index = spr_player_us;
+    }
+    
+    //Stand Down
+    if (!key_down &amp;&amp; Looking=="Down") 
+        || (Looking="Down" &amp;&amp; key_left)
+        || (Looking="Down" &amp;&amp; key_up)
+        || (Looking="Down" &amp;&amp; key_right){
+        sprite_index = spr_player_ds;
+    }
+    
     //Move Right
-    if key_right &amp;&amp; !key_up &amp;&amp; !key_down{
+    if key_right &amp;&amp; !key_up &amp;&amp; !key_down &amp;&amp; !key_left{
         x += 2;
         sprite_index = spr_player_rw;
         image_speed = 0.2;
         Looking = "Right"
     }
+
     
     //Move Left
-    if key_left &amp;&amp; !key_up &amp;&amp; !key_down {
+    if key_left &amp;&amp; !key_up &amp;&amp; !key_down &amp;&amp; !key_right{
         x -= 2;
         sprite_index = spr_player_lw;
         image_speed = 0.2;
@@ -77,7 +112,7 @@ else{
     }
     
     //Move Up
-    if key_up &amp;&amp; !key_right &amp;&amp; !key_left {
+    if key_up &amp;&amp; !key_right &amp;&amp; !key_left &amp;&amp; !key_down{
         y -= 2;
         sprite_index = spr_player_uw;
         image_speed = 0.2;
@@ -85,33 +120,13 @@ else{
     }
     
     //Move Down
-    if key_down &amp;&amp; !key_right &amp;&amp; !key_left {
+    if key_down &amp;&amp; !key_right &amp;&amp; !key_left &amp;&amp; !key_up{
         y += 2;
         sprite_index = spr_player_dw;
         image_speed = 0.2;
         Looking = "Down"
     }
-    
-    //Stand Right
-    if !key_right &amp;&amp; vsp==0 &amp;&amp; hsp==0 &amp;&amp; Looking=="Right"{
-        sprite_index = spr_player_rs;
-    }
-    
-    //Stand Left
-    if !key_left &amp;&amp; vsp==0 &amp;&amp; hsp==0 &amp;&amp; Looking=="Left"{
-        sprite_index = spr_player_ls;
-    }
-    
-    //Stand Up
-    if !key_up &amp;&amp; vsp==0 &amp;&amp; hsp==0 &amp;&amp; Looking=="Up"{
-        sprite_index = spr_player_us;
-    }
-    
-    //Stand Down
-    if !key_down &amp;&amp; vsp==0 &amp;&amp; hsp==0 &amp;&amp; Looking=="Down"{
-        sprite_index = spr_player_ds;
-    }
-    
+       
 }
 
 

@@ -12,6 +12,7 @@
     <sprite>sprites\prota</sprite>
     <sprite>sprites\compa1</sprite>
     <sprite>sprites\compa2</sprite>
+    <sprite>sprites\sprite13</sprite>
     <sprite>sprites\sprite5</sprite>
     <sprites name="spr_player">
       <sprite>sprites\spr_player_rs</sprite>
@@ -23,17 +24,25 @@
       <sprite>sprites\spr_player_lw</sprite>
       <sprite>sprites\spr_player_uw</sprite>
     </sprites>
+    <sprites name="Movement Sprites">
+      <sprites name="spr_father">
+        <sprite>sprites\spr_father_ds</sprite>
+        <sprite>sprites\spr_father_ls</sprite>
+        <sprite>sprites\spr_father_rs</sprite>
+        <sprite>sprites\spr_father_us</sprite>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\object0</object>
     <object>objects\object7</object>
-    <object>objects\obj_prota</object>
     <object>objects\obj_player</object>
     <object>objects\obj_compa2</object>
     <object>objects\obj_compa1</object>
     <object>objects\obj_desplaza</object>
+    <object>objects\obj_father</object>
     <object>objects\obj_camara</object>
     <object>objects\object6</object>
     <objects name="Conversations">
