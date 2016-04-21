@@ -39,10 +39,10 @@
     <object>objects\object0</object>
     <object>objects\object7</object>
     <object>objects\obj_player</object>
+    <object>objects\obj_father</object>
     <object>objects\obj_compa2</object>
     <object>objects\obj_compa1</object>
     <object>objects\obj_desplaza</object>
-    <object>objects\obj_father</object>
     <object>objects\obj_camara</object>
     <object>objects\object6</object>
     <objects name="Conversations">
