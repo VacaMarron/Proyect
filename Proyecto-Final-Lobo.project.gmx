@@ -13,6 +13,7 @@
     <sprite>sprites\compa1</sprite>
     <sprite>sprites\compa2</sprite>
     <sprite>sprites\sprite5</sprite>
+    <sprite>sprites\sprite6</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -25,6 +26,10 @@
     <object>objects\obj_desplaza</object>
     <object>objects\obj_camara</object>
     <object>objects\object6</object>
+    <objects name="Conversations">
+      <object>objects\obj_ConBaseChoose</object>
+      <object>objects\obj_ConBaseAut</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
