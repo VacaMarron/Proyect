@@ -26,10 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>if obj_desplaza.camaraON = 0 {
-move_towards_point(obj_prota.x,obj_prota.y,obj_prota.movespeed)
+move_towards_point(obj_prota.x,obj_prota.y,2)
 }
 if obj_desplaza.camaraON = 1 {
-move_towards_point(obj_desplaza.x,obj_desplaza.y,obj_prota.movespeed)
+move_towards_point(obj_desplaza.x,obj_desplaza.y,1)
 }
 </string>
           </argument>

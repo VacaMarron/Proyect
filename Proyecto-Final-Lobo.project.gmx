@@ -13,7 +13,16 @@
     <sprite>sprites\compa1</sprite>
     <sprite>sprites\compa2</sprite>
     <sprite>sprites\sprite5</sprite>
-    <sprite>sprites\sprite6</sprite>
+    <sprites name="spr_player">
+      <sprite>sprites\spr_player_rs</sprite>
+      <sprite>sprites\spr_player_ds</sprite>
+      <sprite>sprites\spr_player_ls</sprite>
+      <sprite>sprites\spr_player_us</sprite>
+      <sprite>sprites\spr_player_rw</sprite>
+      <sprite>sprites\spr_player_dw</sprite>
+      <sprite>sprites\spr_player_lw</sprite>
+      <sprite>sprites\spr_player_uw</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -21,6 +30,7 @@
     <object>objects\object0</object>
     <object>objects\object7</object>
     <object>objects\obj_prota</object>
+    <object>objects\obj_player</object>
     <object>objects\obj_compa2</object>
     <object>objects\obj_compa1</object>
     <object>objects\obj_desplaza</object>
