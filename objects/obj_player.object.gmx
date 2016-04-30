@@ -115,40 +115,51 @@ else{
     //If player is ready to move
     if yet=true{     
         //Move Right
-        if key_right &amp;&amp; !key_up &amp;&amp; !key_down &amp;&amp; !key_left{
+        if key_right &amp;&amp; !key_up &amp;&amp; !key_down &amp;&amp; !key_left &amp;&amp; place_free(x+32,y){
             yet=false
             moveTimer=gridSize;
             xSpeed=moveSpeed;
             ySpeed=0;
             Looking = "Right"
         }
-
+        if key_right &amp;&amp; !key_up &amp;&amp; !key_down &amp;&amp; !key_left{
+            Looking = "Right"
+        }
     
         //Move Left
+        if key_left &amp;&amp; !key_up &amp;&amp; !key_down &amp;&amp; !key_right &amp;&amp; place_free(x-32,y){
+            yet=false
+            moveTimer=gridSize;
+            xSpeed=-moveSpeed;
+            ySpeed=0;
+            Looking = "Left"
+        }
         if key_left &amp;&amp; !key_up &amp;&amp; !key_down &amp;&amp; !key_right{
-        yet=false
-        moveTimer=gridSize;
-        xSpeed=-moveSpeed;
-        ySpeed=0;
-        Looking = "Left"
+            Looking = "Left"
         }
     
         //Move Up
-        if key_up &amp;&amp; !key_right &amp;&amp; !key_left &amp;&amp; !key_down{
-        yet=false
-        moveTimer=gridSize;
-        xSpeed=0;
-        ySpeed=-moveSpeed;
-        Looking = "Up"
+        if key_up &amp;&amp; !key_right &amp;&amp; !key_left &amp;&amp; !key_down &amp;&amp; place_free(x,y-32){
+            yet=false
+            moveTimer=gridSize;
+            xSpeed=0;
+            ySpeed=-moveSpeed;
+            Looking = "Up"
+        }
+        if key_up &amp;&amp; !key_right &amp;&amp; !key_left &amp;&amp; !key_down {
+            Looking = "Up"
         }
     
         //Move Down
+        if key_down &amp;&amp; !key_right &amp;&amp; !key_left &amp;&amp; !key_up &amp;&amp; place_free(x,y+32){
+            yet=false
+            moveTimer=gridSize;
+            xSpeed=0;
+            ySpeed=moveSpeed;
+            Looking = "Down"
+        }
         if key_down &amp;&amp; !key_right &amp;&amp; !key_left &amp;&amp; !key_up{
-        yet=false
-        moveTimer=gridSize;
-        xSpeed=0;
-        ySpeed=moveSpeed;
-        Looking = "Down"
+            Looking = "Down"
         }
     }  
     
