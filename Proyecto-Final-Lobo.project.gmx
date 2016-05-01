@@ -12,7 +12,7 @@
     <sprite>sprites\prota</sprite>
     <sprite>sprites\compa1</sprite>
     <sprite>sprites\compa2</sprite>
-    <sprite>sprites\sprite13</sprite>
+    <sprite>sprites\spr_camera</sprite>
     <sprite>sprites\sprite5</sprite>
     <sprites name="spr_player">
       <sprite>sprites\spr_player_rs</sprite>
@@ -31,28 +31,58 @@
         <sprite>sprites\spr_father_rs</sprite>
         <sprite>sprites\spr_father_us</sprite>
       </sprites>
+      <sprites name="spr_dog">
+        <sprite>sprites\spr_dog_dw</sprite>
+        <sprite>sprites\spr_dog_ds</sprite>
+        <sprite>sprites\spr_dog_rw</sprite>
+        <sprite>sprites\spr_dog_rs</sprite>
+        <sprite>sprites\spr_dog_lw</sprite>
+        <sprite>sprites\spr_dog_ls</sprite>
+        <sprite>sprites\spr_dog_uw</sprite>
+        <sprite>sprites\spr_dog_us</sprite>
+      </sprites>
     </sprites>
+    <sprite>sprites\spr_collision</sprite>
+    <sprite>sprites\spr_tree2</sprite>
+    <sprite>sprites\spr_tree1</sprite>
+    <sprite>sprites\spr_cinemabar</sprite>
+    <sprite>sprites\spr_invisible</sprite>
   </sprites>
-  <backgrounds name="background"/>
-  <paths name="paths"/>
+  <backgrounds name="background">
+    <background>background\background0</background>
+    <background>background\background1</background>
+  </backgrounds>
+  <paths name="paths">
+    <path>paths\path1</path>
+    <path>paths\path2</path>
+  </paths>
+  <fonts name="fonts">
+    <font>fonts\font0</font>
+  </fonts>
   <objects name="objects">
     <object>objects\object0</object>
     <object>objects\object7</object>
-    <object>objects\obj_player</object>
-    <object>objects\obj_father</object>
     <object>objects\obj_compa2</object>
     <object>objects\obj_compa1</object>
-    <object>objects\obj_dog</object>
     <object>objects\obj_desplaza</object>
-    <object>objects\obj_camara</object>
-    <object>objects\object6</object>
+    <object>objects\obj_parametres</object>
+    <object>objects\obj_tree1</object>
+    <object>objects\obj_tree2</object>
+    <object>objects\obj_collision</object>
+    <object>objects\obj_player</object>
+    <object>objects\obj_father</object>
+    <object>objects\obj_dog</object>
+    <object>objects\obj_camera</object>
     <objects name="Conversations">
       <object>objects\obj_ConBaseChoose</object>
       <object>objects\obj_ConBaseAut</object>
+      <object>objects\obj_cnv1</object>
+      <object>objects\obj_cnv_trigger</object>
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <room>rooms\Bosque1</room>
+    <room>rooms\Bosque2</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

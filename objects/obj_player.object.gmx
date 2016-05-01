@@ -32,6 +32,7 @@ xSpeed=0;
 ySpeed=0;
 moveSpeed=4;
 moveTimer=0;
+stopped=false;
 </string>
           </argument>
         </arguments>
@@ -54,13 +55,21 @@ moveTimer=0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(object0){
-}
-else{
-    key_right = keyboard_check(vk_right) 
-    key_left = keyboard_check(vk_left) 
-    key_up = keyboard_check(vk_up) 
-    key_down = keyboard_check(vk_down)
+            <string>//PAth1 - Bosque1
+/*if Path1=true{
+    if n&lt;5{
+    auto_right=1
+    n+=1;
+    }
+    if n=5 auto_right=0;
+    Path1=false;
+}*/
+        
+    key_right = keyboard_check(vk_right) &amp;&amp; stopped=false
+    key_left = keyboard_check(vk_left) &amp;&amp; stopped=false 
+    key_up = keyboard_check(vk_up) &amp;&amp; stopped=false 
+    key_down = keyboard_check(vk_down) &amp;&amp; stopped=false
+
 
     //Sprite Walking Right
     if Looking = "Right" &amp;&amp; yet=false{
@@ -164,13 +173,13 @@ else{
     }  
     
     if yet=false{
-    x+=xSpeed;
-    y+=ySpeed;
-    moveTimer-=moveSpeed
-    if moveTimer==0 yet=true;
+        x+=xSpeed;
+        y+=ySpeed;
+        moveTimer-=moveSpeed
+        if moveTimer==0 yet=true;
     }
-}
 
+    
 
 </string>
           </argument>

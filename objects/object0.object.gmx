@@ -201,6 +201,7 @@ else {
 }
 //If contador=5 we blow the object
 if contador==5 {
+obj_player.stopped=false;
 instance_destroy();
 }
 </string>
@@ -229,15 +230,15 @@ instance_destroy();
 draw_set_color(c_black);
 if contador==1 {
     draw_text(view_xview+20,view_yview+20,string_copy(texto0,1,count1)); //We draw a string according to count1
-    obj_camara.speed = 50;
-    obj_desplaza.camaraON = 0; //Camera go when = 1
+    obj_camera.speed = 50;
+    obj_desplaza.cameraON = 0; //Camera go when = 1
     }
 
 if contador==2 {
     draw_text(view_xview+20,view_yview+20,string_copy(texto1,1,count2));
     //if count2&lt;(string_length(texto1)) {audio_play_sound(sound0,10,false);} //When the string is being writted we make a sound
     
-    obj_desplaza.camaraON = 0; //Camera return
+    obj_desplaza.cameraON = 0; //Camera return
     count1=0;
     }
     
