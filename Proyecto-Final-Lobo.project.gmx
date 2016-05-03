@@ -46,6 +46,8 @@
     <sprite>sprites\spr_tree2</sprite>
     <sprite>sprites\spr_tree1</sprite>
     <sprite>sprites\spr_cinemabar</sprite>
+    <sprite>sprites\spr_cinemaname</sprite>
+    <sprite>sprites\sprite32</sprite>
     <sprite>sprites\spr_invisible</sprite>
   </sprites>
   <backgrounds name="background">
@@ -57,7 +59,7 @@
     <path>paths\path2</path>
   </paths>
   <fonts name="fonts">
-    <font>fonts\font0</font>
+    <font>fonts\fnt_det</font>
   </fonts>
   <objects name="objects">
     <object>objects\object0</object>
@@ -73,11 +75,13 @@
     <object>objects\obj_father</object>
     <object>objects\obj_dog</object>
     <object>objects\obj_camera</object>
+    <object>objects\obj_portal</object>
     <objects name="Conversations">
       <object>objects\obj_ConBaseChoose</object>
       <object>objects\obj_ConBaseAut</object>
       <object>objects\obj_cnv1</object>
       <object>objects\obj_cnv_trigger</object>
+      <object>objects\obj_cinemabar</object>
     </objects>
   </objects>
   <rooms name="rooms">

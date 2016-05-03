@@ -30,16 +30,20 @@ line=0;
 //We set the alarms
 alarm[0]=1
 //Text and counts for strings
-text1 = "Es por aqui"
-text2 = "WOOF WOOF# WOOF WOOF"
-text3 = "Tranquilo Gair, conozco el camino,#no tardaremos"
-text4 = "WOOF WOOF# WOOF WOOF"
-text5 = "Si, hacía mucho que no teníamos#noticias de Padre, vamos"
+text1 = "Es por aqui."
+text2 = "WOOF WOOF#WOOF WOOF"
+text3 = "Tranquilo Gair, conozco el camino, no tardaremos."
+text4 = "WOOF WOOF#WOOF WOOF"
+text5 = "Si, hacía mucho que no teníamos noticias de Padre, vamos."
 count1=0;
 count2=0;
 count3=0;
 count4=0;
 count5=0;
+
+ready=false;
+
+
 </string>
           </argument>
         </arguments>
@@ -66,7 +70,7 @@ count5=0;
 if line==1 {
     if count1&lt;string_length(text1) {
         count1+=1
-        if string_char_at(text1,count2)!=" " {
+        if string_char_at(text1,count1)!=" " {
             audio_play_sound(sound0,10,false);
        }
     }
@@ -107,7 +111,7 @@ if line==5 {
 }
 
 //We create a constant bucle
-alarm[1]=1
+alarm[0]=1
 </string>
           </argument>
         </arguments>
@@ -130,15 +134,32 @@ alarm[1]=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//React to inputs
-if (keyboard_check_pressed(ord('A'))) {
+            <string>if instance_exists(obj_cinemabar){
+    if obj_cinemabar.ready=true ready=true
+}
+
+//React to inputs
+if (keyboard_check_pressed(ord('A')) &amp;&amp; ready=true) {
     line+=1;
+}
+
+if line=0{
+BarDown=instance_create(view_xview,view_yview+416,obj_cinemabar);
+BarDown.up=false;
+BarDown.down=true;
+BarUp=instance_create(view_xview,view_yview-104,obj_cinemabar);
+BarUp.up=true;
+BarUp.down=false;
 }
 
 //If contador=5 we blow the object
 if line==6 {
-obj_player.stopped=false
-instance_destroy();
+    if instance_exists(obj_cinemabar) obj_cinemabar.finished=true;
+    if !instance_exists(obj_cinemabar){
+        obj_player.Looking="Down"
+        obj_player.stopped=false;
+        instance_destroy();
+    }
 }
 </string>
           </argument>
@@ -164,61 +185,41 @@ instance_destroy();
             <kind>1</kind>
             <string>//We draw one string or another depending of the value of contador.
 draw_set_color(c_white);
+draw_set_font(fnt_det);
+
 if line==1 {
-    draw_text(view_xview+20,view_yview+20,string_copy(text1,1,count1)); //We draw a string according to count1
+    draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
+    draw_text(view_xview+42,view_yview+301,"KIERON");
+    draw_text(view_xview+20,view_yview+332,string_copy(text1,1,count1)); //We draw a string according to count1
     }
 
 if line==2 {
-    draw_text(view_xview+20,view_yview+20,string_copy(text2,1,count2));
-    //if count2&lt;(string_length(texto1)) {audio_play_sound(sound0,10,false);} //When the string is being writted we make a sound
-    
-    obj_desplaza.camaraON = 0; //Camera return
-    count2=0;
+    draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
+    draw_text(view_xview+42,view_yview+301,"GAIR");
+    draw_text(view_xview+20,view_yview+332,string_copy(text2,1,count2));
+    count3=0;
     }
     
 if line==3{
-    draw_text(view_xview+20,view_yview+20,string_copy(text3,1,count3));
-    count3=0
+    draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
+    draw_text(view_xview+42,view_yview+301,"KIERON");
+    draw_text(view_xview+20,view_yview+332,string_copy(text3,1,count3));
+    count4=0
     }
 
 
 if line==4 {
-     draw_text(view_xview+20,view_yview+20,string_copy(text4,1,count4));
-     count4=0
-     }
+    draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
+    draw_text(view_xview+42,view_yview+301,"GAIR");
+    draw_text(view_xview+20,view_yview+332,string_copy(text4,1,count4));
+    count5=0
+    }
      
 if line==5 {
-     draw_text(view_xview+20,view_yview+20,string_copy(text5,1,count5));
-     count5=0
-     }  
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>object0</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//We draw a "text Box" the object exists
-if line&gt;=1 &amp;&amp; line&lt;=5 {
-    draw_sprite(yope,0,view_xview/2,view_yview/2);
-    }
-else {
-    draw_sprite(yope,0,view_xview/2,view_yview/2);
+    draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
+    draw_text(view_xview+42,view_yview+301,"KIERON");
+    draw_text(view_xview+20,view_yview+332,string_copy(text5,1,count5));
+    count4=0
     }
 </string>
           </argument>

@@ -55,16 +55,7 @@ stopped=false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//PAth1 - Bosque1
-/*if Path1=true{
-    if n&lt;5{
-    auto_right=1
-    n+=1;
-    }
-    if n=5 auto_right=0;
-    Path1=false;
-}*/
-        
+            <string>        
     key_right = keyboard_check(vk_right) &amp;&amp; stopped=false
     key_left = keyboard_check(vk_left) &amp;&amp; stopped=false 
     key_up = keyboard_check(vk_up) &amp;&amp; stopped=false 

@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -26,8 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>draw_set_color(c_black);
-
-//draw_text(view_xview+120,view_yview+20,obj_player.n);
+if instance_exists(obj_cinemabar){
+draw_text(view_xview+120,view_yview+240,obj_cinemabar.ready);
+}
 //draw_text(view_xview+120,view_yview+40,obj_player.auto_right);
 
 
