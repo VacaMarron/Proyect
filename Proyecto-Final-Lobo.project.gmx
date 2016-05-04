@@ -47,7 +47,6 @@
     <sprite>sprites\spr_tree1</sprite>
     <sprite>sprites\spr_cinemabar</sprite>
     <sprite>sprites\spr_cinemaname</sprite>
-    <sprite>sprites\sprite32</sprite>
     <sprite>sprites\spr_invisible</sprite>
   </sprites>
   <backgrounds name="background">
@@ -58,6 +57,9 @@
     <path>paths\path1</path>
     <path>paths\path2</path>
   </paths>
+  <scripts name="scripts">
+    <script>scripts\cinematic1.gml</script>
+  </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_det</font>
   </fonts>
@@ -72,6 +74,7 @@
     <object>objects\obj_tree2</object>
     <object>objects\obj_collision</object>
     <object>objects\obj_player</object>
+    <object>objects\obj_autoplayer</object>
     <object>objects\obj_father</object>
     <object>objects\obj_dog</object>
     <object>objects\obj_camera</object>

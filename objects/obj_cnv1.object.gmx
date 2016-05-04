@@ -139,7 +139,7 @@ alarm[0]=1
 }
 
 //React to inputs
-if (keyboard_check_pressed(ord('A')) &amp;&amp; ready=true) {
+if (line&lt;6 &amp;&amp; keyboard_check_pressed(ord('A')) &amp;&amp; ready=true) {
     line+=1;
 }
 

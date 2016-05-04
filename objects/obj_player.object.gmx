@@ -33,6 +33,8 @@ ySpeed=0;
 moveSpeed=4;
 moveTimer=0;
 stopped=false;
+cinematic=false;
+
 </string>
           </argument>
         </arguments>
@@ -55,7 +57,7 @@ stopped=false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>        
+            <string>if cinematic=false{
     key_right = keyboard_check(vk_right) &amp;&amp; stopped=false
     key_left = keyboard_check(vk_left) &amp;&amp; stopped=false 
     key_up = keyboard_check(vk_up) &amp;&amp; stopped=false 
@@ -169,6 +171,8 @@ stopped=false;
         moveTimer-=moveSpeed
         if moveTimer==0 yet=true;
     }
+    
+}
 
     
 
