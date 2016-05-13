@@ -27,10 +27,8 @@
             <kind>1</kind>
             <string>draw_set_color(c_black);
 
-if instance_exists(obj_cnv1){
-draw_text(view_xview+120,view_yview+120,obj_cnv1.line);
-}
-draw_text(view_xview+120,view_yview+140,obj_player.stopped);
+
+draw_text(view_xview+120,view_yview+140,obj_player.cambio);
 
 /*draw_line(view_xview,view_yview+208,view_xview+544,view_yview+208);
 draw_line(view_xview,view_yview+208-16,view_xview+544,view_yview+208-16);

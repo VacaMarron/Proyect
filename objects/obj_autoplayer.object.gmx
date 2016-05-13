@@ -59,7 +59,7 @@ n=0;
             <kind>1</kind>
             <string>switch(room){
     case Bosque1:
-    script_execute(cinematic2);
+    script_execute(cinematic1);
     break;
     }
         

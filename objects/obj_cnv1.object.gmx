@@ -43,6 +43,7 @@ count5=0;
 
 ready=false;
 
+obj_player.cambio=true;
 
 </string>
           </argument>

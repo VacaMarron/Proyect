@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if obj_player.y=y room_goto_next();
+            <string>if obj_player.y=y {
+
+room_goto_next();
+}
 </string>
           </argument>
         </arguments>
