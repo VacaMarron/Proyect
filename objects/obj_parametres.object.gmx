@@ -28,7 +28,10 @@
             <string>draw_set_color(c_black);
 
 
-draw_text(view_xview+120,view_yview+140,obj_player.cambio);
+//draw_text(view_xview+120,view_yview+140,obj_wood.y);
+
+
+
 
 /*draw_line(view_xview,view_yview+208,view_xview+544,view_yview+208);
 draw_line(view_xview,view_yview+208-16,view_xview+544,view_yview+208-16);

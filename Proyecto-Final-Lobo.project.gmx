@@ -12,7 +12,6 @@
     <sprite>sprites\prota</sprite>
     <sprite>sprites\compa1</sprite>
     <sprite>sprites\compa2</sprite>
-    <sprite>sprites\spr_camera</sprite>
     <sprite>sprites\sprite5</sprite>
     <sprites name="spr_player">
       <sprite>sprites\spr_player_rs</sprite>
@@ -24,7 +23,7 @@
       <sprite>sprites\spr_player_lw</sprite>
       <sprite>sprites\spr_player_uw</sprite>
     </sprites>
-    <sprites name="Movement Sprites">
+    <sprites name="Characters Sprites">
       <sprites name="spr_father">
         <sprite>sprites\spr_father_ds</sprite>
         <sprite>sprites\spr_father_ls</sprite>
@@ -42,16 +41,25 @@
         <sprite>sprites\spr_dog_us</sprite>
       </sprites>
     </sprites>
-    <sprite>sprites\spr_collision</sprite>
-    <sprite>sprites\spr_tree2</sprite>
-    <sprite>sprites\spr_tree1</sprite>
-    <sprite>sprites\spr_cinemabar</sprite>
-    <sprite>sprites\spr_cinemaname</sprite>
-    <sprite>sprites\spr_invisible</sprite>
+    <sprites name="Usefull Sprites">
+      <sprite>sprites\spr_cinemabar</sprite>
+      <sprite>sprites\spr_cinemaname</sprite>
+      <sprite>sprites\spr_invisible</sprite>
+      <sprite>sprites\spr_collision</sprite>
+      <sprite>sprites\spr_collisionwater</sprite>
+      <sprite>sprites\spr_camera</sprite>
+    </sprites>
+    <sprites name="Scenary Sprites">
+      <sprite>sprites\spr_tree1</sprite>
+      <sprite>sprites\spr_tree2</sprite>
+      <sprite>sprites\spr_wood</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
-    <background>background\background0</background>
-    <background>background\background1</background>
+    <background>background\bck_Bosque1</background>
+    <background>background\bck_Bosque2</background>
+    <background>background\bck_Bosque3</background>
+    <background>background\bck_Casa</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\path1</path>
@@ -72,11 +80,14 @@
     <object>objects\obj_parametres</object>
     <object>objects\obj_tree1</object>
     <object>objects\obj_tree2</object>
+    <object>objects\obj_collisionwater</object>
     <object>objects\obj_collision</object>
     <object>objects\obj_player</object>
     <object>objects\obj_autoplayer</object>
     <object>objects\obj_father</object>
     <object>objects\obj_dog</object>
+    <object>objects\obj_wood</object>
+    <object>objects\obj_wood2</object>
     <object>objects\obj_camera</object>
     <object>objects\obj_portal</object>
     <objects name="Conversations">
@@ -87,7 +98,12 @@
       <object>objects\obj_cinemabar</object>
     </objects>
   </objects>
-  <rooms name="rooms"/>
+  <rooms name="rooms">
+    <room>rooms\Bosque3</room>
+    <room>rooms\Bosque1</room>
+    <room>rooms\Bosque2</room>
+    <room>rooms\Casa</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
