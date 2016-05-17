@@ -54,6 +54,22 @@
       <sprite>sprites\spr_tree2</sprite>
       <sprite>sprites\spr_wood</sprite>
     </sprites>
+    <sprites name="puzzle1">
+      <sprite>sprites\sprBlock1</sprite>
+      <sprite>sprites\sprBlock2</sprite>
+      <sprite>sprites\sprBlock3</sprite>
+      <sprite>sprites\sprBlock4</sprite>
+      <sprite>sprites\sprBlock5</sprite>
+      <sprite>sprites\sprBlock6</sprite>
+      <sprite>sprites\sprBlock7</sprite>
+      <sprite>sprites\sprBlock8</sprite>
+      <sprite>sprites\sprBlock9</sprite>
+      <sprite>sprites\sprBlock10</sprite>
+      <sprite>sprites\sprBlock11</sprite>
+      <sprite>sprites\sprBlock12</sprite>
+      <sprite>sprites\sprBlock13</sprite>
+      <sprite>sprites\sprBlock14</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_Bosque1</background>
@@ -67,6 +83,7 @@
   </paths>
   <scripts name="scripts">
     <script>scripts\cinematic1.gml</script>
+    <script>scripts\scriptPuzzle.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_det</font>
@@ -97,12 +114,29 @@
       <object>objects\obj_cnv_trigger</object>
       <object>objects\obj_cinemabar</object>
     </objects>
+    <objects name="puzzle1">
+      <object>objects\objBlock1</object>
+      <object>objects\objBlock2</object>
+      <object>objects\objBlock3</object>
+      <object>objects\objBlock4</object>
+      <object>objects\objBlock5</object>
+      <object>objects\objBlock6</object>
+      <object>objects\objBlock7</object>
+      <object>objects\objBlock8</object>
+      <object>objects\objBlock9</object>
+      <object>objects\objBlock10</object>
+      <object>objects\objBlock11</object>
+      <object>objects\objBlock12</object>
+      <object>objects\objBlock13</object>
+      <object>objects\objBlock14</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\Bosque3</room>
     <room>rooms\Bosque1</room>
     <room>rooms\Bosque2</room>
     <room>rooms\Casa</room>
+    <room>rooms\puzzle1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
