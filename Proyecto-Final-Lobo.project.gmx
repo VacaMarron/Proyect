@@ -70,6 +70,19 @@
       <sprite>sprites\sprBlock13</sprite>
       <sprite>sprites\sprBlock14</sprite>
     </sprites>
+    <sprites name="puzzle2">
+      <sprite>sprites\sprBlock2_1</sprite>
+      <sprite>sprites\sprBlock2_2</sprite>
+      <sprite>sprites\sprBlock2_3</sprite>
+      <sprite>sprites\sprBlock2_4</sprite>
+      <sprite>sprites\sprBlock2_5</sprite>
+      <sprite>sprites\sprBlock2_6</sprite>
+      <sprite>sprites\sprBlock2_7</sprite>
+      <sprite>sprites\sprBlock2_8</sprite>
+      <sprite>sprites\sprBlock2_9</sprite>
+      <sprite>sprites\sprBlock2_10</sprite>
+      <sprite>sprites\sprBlock2_11</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_Bosque1</background>
@@ -130,6 +143,19 @@
       <object>objects\objBlock13</object>
       <object>objects\objBlock14</object>
     </objects>
+    <objects name="puzzle2">
+      <object>objects\objBlock2_1</object>
+      <object>objects\objPuzzle2_2</object>
+      <object>objects\objPuzzle2_3</object>
+      <object>objects\objPuzzle2_4</object>
+      <object>objects\objPuzzle2_5</object>
+      <object>objects\objPuzzle2_6</object>
+      <object>objects\objPuzzle2_7</object>
+      <object>objects\objPuzzle2_8</object>
+      <object>objects\objPuzzle2_9</object>
+      <object>objects\objPuzzle2_10</object>
+      <object>objects\objPuzzle2_11</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\Bosque3</room>
@@ -137,6 +163,7 @@
     <room>rooms\Bosque2</room>
     <room>rooms\Casa</room>
     <room>rooms\puzzle1</room>
+    <room>rooms\puzzle2</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
