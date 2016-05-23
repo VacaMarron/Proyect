@@ -114,6 +114,56 @@ moveBlock = 0;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(objBlock1.x = 0 &amp;&amp;
+objBlock12.x = 100 &amp;&amp;
+objBlock14.x = 200 &amp;&amp;
+objBlock2.x = 0 &amp;&amp;
+objBlock10.x = 100 &amp;&amp;
+objBlock7.x = 200 &amp;&amp;
+objBlock5.x = 300 &amp;&amp;
+objBlock3.x = 0 &amp;&amp;
+objBlock8.x = 200 &amp;&amp;
+objBlock6.x = 300 &amp;&amp;
+objBlock11.x = 0 &amp;&amp;
+objBlock13.x = 100 &amp;&amp;
+objBlock9.x = 200 &amp;&amp;
+
+objBlock1.y = 0 &amp;&amp;
+objBlock12.y = 0 &amp;&amp;
+objBlock14.y = 0 &amp;&amp;
+objBlock2.y = 100 &amp;&amp;
+objBlock10.y = 100 &amp;&amp;
+objBlock7.y = 100 &amp;&amp;
+objBlock5.y = 100 &amp;&amp;
+objBlock3.y = 200 &amp;&amp;
+objBlock8.y = 200 &amp;&amp;
+objBlock6.y = 200 &amp;&amp;
+objBlock11.y = 300 &amp;&amp;
+objBlock13.y = 300 &amp;&amp;
+objBlock9.y = 300)
+{
+    show_debug_message("good job")
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
   </events>
   <PhysicsObject>0</PhysicsObject>

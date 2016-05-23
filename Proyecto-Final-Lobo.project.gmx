@@ -158,12 +158,12 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\puzzle2</room>
+    <room>rooms\puzzle1</room>
     <room>rooms\Bosque3</room>
     <room>rooms\Bosque1</room>
     <room>rooms\Bosque2</room>
     <room>rooms\Casa</room>
-    <room>rooms\puzzle1</room>
-    <room>rooms\puzzle2</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
