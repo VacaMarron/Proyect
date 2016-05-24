@@ -155,6 +155,7 @@
       <object>objects\objPuzzle2_9</object>
       <object>objects\objPuzzle2_10</object>
       <object>objects\objPuzzle2_11</object>
+      <object>objects\puzzle2Mgr</object>
     </objects>
   </objects>
   <rooms name="rooms">

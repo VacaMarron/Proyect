@@ -52,7 +52,7 @@
   </views>
   <instances>
     <instance objName="objPuzzle2_2" x="0" y="300" name="inst_74264355" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPuzzle2_3" x="199" y="201" name="inst_8DE7CF64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPuzzle2_3" x="200" y="200" name="inst_8DE7CF64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPuzzle2_4" x="300" y="0" name="inst_5D39865E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPuzzle2_5" x="200" y="100" name="inst_6A8EE6DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPuzzle2_6" x="100" y="100" name="inst_3FB4EAA9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -66,6 +66,7 @@
     <instance objName="objPuzzle2_10" x="100" y="300" name="inst_4A9AD86B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPuzzle2_11" x="300" y="300" name="inst_0DE467D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock2_1" x="0" y="0" name="inst_C7F54F22" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="puzzle2Mgr" x="0" y="0" name="inst_3A606DEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

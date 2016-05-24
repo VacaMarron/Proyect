@@ -68,6 +68,24 @@ case 4:
 }
 moveBlock = 0;
 
+// make sure the position is multiple of 100
+modX = x % 100;
+if (modX != 0)
+{
+    if (modX &lt; 50)
+        x -= modX;
+    else
+        x += 100 - modX;
+}
+modY = y % 100;
+if (modY != 0)
+{
+    if (modY &lt; 50)
+        y -= modY;
+    else
+        y += 100 - modY;
+}
+
 </string>
           </argument>
         </arguments>
@@ -159,6 +177,9 @@ objBlock13.y = 300 &amp;&amp;
 objBlock9.y = 300)
 {
     show_debug_message("good job")
+}
+else
+{
 }
 </string>
           </argument>
