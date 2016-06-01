@@ -89,6 +89,17 @@
     <background>background\bck_Bosque2</background>
     <background>background\bck_Bosque3</background>
     <background>background\bck_Casa</background>
+    <background>background\bck_Lago</background>
+    <background>background\bck_Pueblo</background>
+    <background>background\bck_ParqueSur</background>
+    <background>background\bck_Parque</background>
+    <background>background\bck_Ciudad</background>
+    <background>background\bck_CiudadNorte</background>
+    <background>background\bck_CiudadEste</background>
+    <background>background\bck_Bar</background>
+    <background>background\bck_AlcantarillaCajas</background>
+    <background>background\bck_Alcantarilla</background>
+    <background>background\bck_StreetFighter</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\path1</path>
@@ -159,12 +170,23 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\puzzle2</room>
     <room>rooms\puzzle1</room>
+    <room>rooms\puzzle2</room>
     <room>rooms\Bosque3</room>
     <room>rooms\Bosque1</room>
     <room>rooms\Bosque2</room>
     <room>rooms\Casa</room>
+    <room>rooms\Lago</room>
+    <room>rooms\Pueblo</room>
+    <room>rooms\ParqueSur</room>
+    <room>rooms\Parque</room>
+    <room>rooms\Ciudad</room>
+    <room>rooms\CiudadNorte</room>
+    <room>rooms\CiudadEste</room>
+    <room>rooms\Bar</room>
+    <room>rooms\AlcantarillaCajas</room>
+    <room>rooms\Alcantarilla</room>
+    <room>rooms\StreetFighter</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
