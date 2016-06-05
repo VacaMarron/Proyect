@@ -8,6 +8,7 @@
     <sound>sound\sound0</sound>
   </sounds>
   <sprites name="sprites">
+    <sprite>sprites\spr_textArrow</sprite>
     <sprite>sprites\yope</sprite>
     <sprite>sprites\prota</sprite>
     <sprite>sprites\compa1</sprite>
@@ -135,6 +136,7 @@
       <object>objects\obj_ConBaseChoose</object>
       <object>objects\obj_ConBaseAut</object>
       <object>objects\obj_cnv1</object>
+      <object>objects\obj_cnv2</object>
       <object>objects\obj_cnv_trigger</object>
       <object>objects\obj_cinemabar</object>
     </objects>
@@ -170,11 +172,11 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\Bosque1</room>
+    <room>rooms\Bosque3</room>
+    <room>rooms\Bosque2</room>
     <room>rooms\puzzle1</room>
     <room>rooms\puzzle2</room>
-    <room>rooms\Bosque3</room>
-    <room>rooms\Bosque1</room>
-    <room>rooms\Bosque2</room>
     <room>rooms\Casa</room>
     <room>rooms\Lago</room>
     <room>rooms\Pueblo</room>

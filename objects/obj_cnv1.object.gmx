@@ -30,11 +30,11 @@ line=0;
 //We set the alarms
 alarm[0]=1
 //Text and counts for strings
-text1 = "Es por aqui."
+text1 = "This way, boy"
 text2 = "WOOF WOOF#WOOF WOOF"
-text3 = "Tranquilo Gair, conozco el camino, no tardaremos."
+text3 = "Don’t worry Gair, I know the way, we won’t be late"
 text4 = "WOOF WOOF#WOOF WOOF"
-text5 = "Si, hacía mucho que no teníamos noticias de Padre, vamos."
+text5 = "Yes, it’s been so long since we have news from Father. #Let’s move."
 count1=0;
 count2=0;
 count3=0;
