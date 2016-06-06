@@ -50,6 +50,55 @@
         <sprite>sprites\spr_momright</sprite>
         <sprite>sprites\spr_momup</sprite>
       </sprites>
+      <sprites name="spr_geralt">
+        <sprite>sprites\spr_geraltdown</sprite>
+        <sprite>sprites\spr_geraltup</sprite>
+        <sprite>sprites\spr_geraltleft</sprite>
+        <sprite>sprites\spr_gearaltright</sprite>
+        <sprite>sprites\spr_geraltdownW</sprite>
+        <sprite>sprites\spr_geraltupW</sprite>
+        <sprite>sprites\spr_geraltleftW</sprite>
+        <sprite>sprites\spr_geraltrightW</sprite>
+      </sprites>
+      <sprites name="spr_vincent">
+        <sprite>sprites\spr_vincentup</sprite>
+        <sprite>sprites\spr_vincentdown</sprite>
+        <sprite>sprites\spr_vincentleft</sprite>
+        <sprite>sprites\spr_vincentright</sprite>
+        <sprite>sprites\spr_vincentupW</sprite>
+        <sprite>sprites\spr_vincentdownW</sprite>
+        <sprite>sprites\spr_vincentleftW</sprite>
+        <sprite>sprites\spr_vincentrightW</sprite>
+      </sprites>
+      <sprites name="spr_gabriel">
+        <sprite>sprites\spr_gabrieldown</sprite>
+        <sprite>sprites\spr_gabrielup</sprite>
+        <sprite>sprites\spr_gabrielleft</sprite>
+        <sprite>sprites\spr_gabrielright</sprite>
+        <sprite>sprites\spr_gabrieldownW</sprite>
+        <sprite>sprites\spr_gabrielupW</sprite>
+        <sprite>sprites\spr_gabrielleftW</sprite>
+        <sprite>sprites\spr_gabrielrightW</sprite>
+      </sprites>
+      <sprites name="spr_trump">
+        <sprite>sprites\spr_trumpup</sprite>
+        <sprite>sprites\spr_trumpdown</sprite>
+        <sprite>sprites\spr_trumpleft</sprite>
+        <sprite>sprites\spr_trumpright</sprite>
+      </sprites>
+      <sprites name="spr_barman">
+        <sprite>sprites\spr_barman</sprite>
+      </sprites>
+      <sprites name="spr_sylla">
+        <sprite>sprites\spr_syllaup</sprite>
+        <sprite>sprites\spr_sylladown</sprite>
+        <sprite>sprites\spr_syllaleft</sprite>
+        <sprite>sprites\spr_syllaright</sprite>
+        <sprite>sprites\spr_sylladownW</sprite>
+        <sprite>sprites\spr_syllaupW</sprite>
+        <sprite>sprites\spr_syllaleftW</sprite>
+        <sprite>sprites\spr_syllarightW</sprite>
+      </sprites>
     </sprites>
     <sprites name="Usefull Sprites">
       <sprite>sprites\spr_cinemabar</sprite>
@@ -64,6 +113,15 @@
       <sprite>sprites\spr_tree1</sprite>
       <sprite>sprites\spr_tree2</sprite>
       <sprite>sprites\spr_wood</sprite>
+      <sprite>sprites\spr_bigtree</sprite>
+      <sprite>sprites\spr_wood2tree</sprite>
+      <sprite>sprites\spr_wood2tree2</sprite>
+      <sprite>sprites\spr_totem</sprite>
+      <sprite>sprites\spr_cartel</sprite>
+      <sprite>sprites\spr_tuberia</sprite>
+      <sprite>sprites\spr_tuberiamojada</sprite>
+      <sprite>sprites\spr_cheese</sprite>
+      <sprite>sprites\spr_wood23</sprite>
     </sprites>
     <sprites name="puzzle1">
       <sprite>sprites\sprBlock1</sprite>
@@ -149,6 +207,15 @@
       <object>objects\obj_wood2</object>
       <object>objects\obj_tree1</object>
       <object>objects\obj_tree2</object>
+      <object>objects\obj_bigtree</object>
+      <object>objects\obj_wood2tree</object>
+      <object>objects\obj_wood2tree2</object>
+      <object>objects\obj_runa</object>
+      <object>objects\obj_cartel</object>
+      <object>objects\obj_tuberia</object>
+      <object>objects\obj_tuberiamojada</object>
+      <object>objects\obj_cheese</object>
+      <object>objects\obj_wood23</object>
     </objects>
     <objects name="Conversations">
       <object>objects\obj_ConBaseChoose</object>
