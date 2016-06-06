@@ -30,21 +30,35 @@ line=0;
 //We set the alarms
 alarm[0]=1
 //Text and counts for strings
-text1 = "This way, boy"
-text2 = "WOOF WOOF#WOOF WOOF"
-text3 = "Don’t worry Gair, I know the way, we won’t be late"
-text4 = "WOOF WOOF#WOOF WOOF"
-text5 = "Yes, it’s been so long since we have news from Father. #Let’s move."
+text1 = "Don’t move, this is silver"
+text2 = "What the h---" 
+text3 = "I do the questions here.#Where are your Friends going?"
+text4 = "No way I’m tellin--"
+text5 = "Coooome on…"
+text6 = "Agh... fuck... the sewers...#they’re going to the sewers..."
+text7 = "What for?"
+text8 = "I’ve tell enough..."
+text9 = "I didn’t konw you reek so much at contact with cutlery..."
+text10= "Aaaaagh agah agh.... FAERIES, FUCKING FAERIES"
+text11= "Appreciated"
+
+
 count1=0;
 count2=0;
 count3=0;
 count4=0;
 count5=0;
+count6=0;
+count7=0;
+count8=0;
+count9=0;
+count10=0;
+count11=0;
+
 
 ready=false;
 
 obj_player.cambio=true;
-
 </string>
           </argument>
         </arguments>
@@ -110,6 +124,59 @@ if line==5 {
        }
     }
 }
+if line==6 {
+    if count6&lt;string_length(text6) {
+        count6+=1
+        if string_char_at(text6,count6)!=" " {
+            audio_play_sound(sound0,10,false);
+       }
+    }
+}
+if line==7 {
+    if (count7&lt;(string_length(text7))) {
+       count7+=1
+       if string_char_at(text7,count7)!=" " {
+            audio_play_sound(sound0,10,false);
+       }
+       }
+}
+if line==8 {
+    if (count8&lt;(string_length(text8))) {
+       count8+=1
+       if string_char_at(text8,count8)!=" " {
+            audio_play_sound(sound0,10,false);
+       }
+    }
+}
+
+if line==9 {
+    if (count9&lt;(string_length(text9))) {
+       count9+=1
+       if string_char_at(text9,count9)!=" " {
+            audio_play_sound(sound0,10,false);
+       }
+    }
+}
+
+if line==10 {
+    if (count10&lt;(string_length(text10))) {
+       count10+=1
+       if string_char_at(text10,count10)!=" " {
+            audio_play_sound(sound0,10,false);
+       }
+    }
+}
+
+if line==11 {
+    if (count11&lt;(string_length(text11))) {
+        count11+=1
+        if string_char_at(text11,count11)!=" " {
+            audio_play_sound(sound0,10,false);
+       }
+    }
+}
+
+
 
 //We create a constant bucle
 alarm[0]=1
@@ -143,7 +210,7 @@ alarm[0]=1
 }
 
 //React to inputs
-if (line&lt;6 &amp;&amp; keyboard_check_pressed(ord('A')) &amp;&amp; ready=true) {
+if (line&lt;12 &amp;&amp; keyboard_check_pressed(ord('A')) &amp;&amp; ready=true) {
     line+=1;
 }
 
@@ -157,7 +224,7 @@ BarUp.down=false;
 }
 
 //If contador=5 we blow the object
-if line==6 {
+if line==12 {
     if instance_exists(obj_cinemabar) obj_cinemabar.finished=true;
     if !instance_exists(obj_cinemabar){
         obj_player.Looking="Down"
@@ -193,14 +260,14 @@ draw_set_font(fnt_det);
 
 if line==1 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"KIERON");
+    draw_text(view_xview+42,view_yview+301,"FATHER");
     draw_text(view_xview+20,view_yview+332,string_copy(text1,1,count1)); //We draw a string according to count1
     if count1==string_length(text1) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
     }
 
 if line==2 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"GAIR");
+    draw_text(view_xview+42,view_yview+301,"EAGLE");
     draw_text(view_xview+20,view_yview+332,string_copy(text2,1,count2));
     count1=0;
     if count2==string_length(text2) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
@@ -208,16 +275,15 @@ if line==2 {
     
 if line==3{
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"KIERON");
+    draw_text(view_xview+42,view_yview+301,"EAGLE");
     draw_text(view_xview+20,view_yview+332,string_copy(text3,1,count3));
-    count2=0
+    count2=0;
     if count3==string_length(text3) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
     }
-
-
+    
 if line==4 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"GAIR");
+    draw_text(view_xview+42,view_yview+301,"EAGLE");
     draw_text(view_xview+20,view_yview+332,string_copy(text4,1,count4));
     count3=0
     if count4==string_length(text4) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
@@ -225,11 +291,58 @@ if line==4 {
      
 if line==5 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"KIERON");
+    draw_text(view_xview+42,view_yview+301,"FATHER");
     draw_text(view_xview+20,view_yview+332,string_copy(text5,1,count5));
     count4=0
-    if count5==string_length(text5) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
+    if count5==string_length(text6) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
     }
+    
+if line==6 {
+    draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
+    draw_text(view_xview+42,view_yview+301,"KIERON");
+    draw_text(view_xview+20,view_yview+332,string_copy(text6,1,count6)); //We draw a string according to count1
+    count5=0
+    if count6==string_length(text6) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
+    }
+
+if line==7 {
+    draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
+    draw_text(view_xview+42,view_yview+301,"KIERON");
+    draw_text(view_xview+20,view_yview+332,string_copy(text7,1,count7));
+    count6=0;
+    if count7==string_length(text7) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
+    }
+    
+if line==8{
+    draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
+    draw_text(view_xview+42,view_yview+301,"KIERON");
+    draw_text(view_xview+20,view_yview+332,string_copy(text8,1,count8));
+    count7=0
+    if count8==string_length(text8) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
+    }
+
+if line==9 {
+    draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
+    draw_text(view_xview+42,view_yview+301,"KIERON");
+    draw_text(view_xview+20,view_yview+332,string_copy(text9,1,count9));
+    count8=0
+    if count9==string_length(text9) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);}
+     
+if line==10 {
+    draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
+    draw_text(view_xview+42,view_yview+301,"FATHER");
+    draw_text(view_xview+20,view_yview+332,string_copy(text10,1,count10));
+    count9=0
+    if count10==string_length(text10) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);}
+    
+if line==11 {
+    draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
+    draw_text(view_xview+42,view_yview+301,"FATHER");
+    draw_text(view_xview+20,view_yview+332,string_copy(text11,1,count11)); //We draw a string according to count1
+    count10=0
+    if count11==string_length(text11) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);}
+
+
 </string>
           </argument>
         </arguments>

@@ -500,10 +500,8 @@ alarm[0]=1
 
 //React to inputs
 if (line&lt;40 &amp;&amp; keyboard_check_pressed(ord('A')) &amp;&amp; ready=true) {
-    if line=4 line=100;
-    else line+=1;
+    line+=1;
 }
-if line=100 &amp;&amp; !instance_exists(obj_autoplayer) instance_create(1,1,obj_autoplayer);
 
 if line=0{
 BarDown=instance_create(view_xview,view_yview+416,obj_cinemabar);
@@ -514,11 +512,8 @@ BarUp.up=true;
 BarUp.down=false;
 }
 
-
-
 //If contador=5 we blow the object
 if line==40 {
-    obj_gameController.CNV2=true;
     if instance_exists(obj_cinemabar) obj_cinemabar.finished=true;
     if !instance_exists(obj_cinemabar){
         obj_player.Looking="Down"

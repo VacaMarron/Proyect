@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,22 +25,24 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>player=instance_find(obj_player,0);
-player.cinematic=true;
-/* Estados
-    0 - Anda hacia abajo
-    1 - Anda hacia la izquierda
-    2 - Baja
-    */
-    
-status = 0;
-n=0;
+            <string>CNV2 = false
+CNV3 = false
+CNV4 = false
+CNV5 = false
+CNV6 = false
+CNV7 = false
+CNV8 = false
+CNV9 = false
+CNV10 = false
+CNV11 = false
+CNV12 = false
+
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="7" enumb="4">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -57,15 +59,9 @@ n=0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>switch(room){
-    case Bosque1:
-    script_execute(cinematic1);
-    break;
-    case Bosque2:
-    script_execute(cinematic2)
-    break;
-    }
-        
+            <string>if room=Bosque2 &amp;&amp; CNV2=false{
+    instance_create(x,y,obj_cnv2);
+}
 </string>
           </argument>
         </arguments>

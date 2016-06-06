@@ -59,7 +59,7 @@
     <instance objName="obj_collision" x="-32" y="224" name="inst_C95ED6B4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_parametres" x="0" y="0" name="inst_6DA7A2E1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_cnv_trigger" x="64" y="192" name="inst_1CC64F49" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_portal" x="192" y="416" name="inst_2C5CC771" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="192" y="416" name="inst_2C5CC771" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_autoplayer" x="32" y="0" name="inst_8EC03B24" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

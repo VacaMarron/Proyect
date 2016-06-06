@@ -8,7 +8,6 @@
     <sound>sound\sound0</sound>
   </sounds>
   <sprites name="sprites">
-    <sprite>sprites\spr_textArrow</sprite>
     <sprite>sprites\yope</sprite>
     <sprite>sprites\prota</sprite>
     <sprite>sprites\compa1</sprite>
@@ -41,6 +40,16 @@
         <sprite>sprites\spr_dog_uw</sprite>
         <sprite>sprites\spr_dog_us</sprite>
       </sprites>
+      <sprites name="spr_eagle">
+        <sprite>sprites\spr_eaglesr</sprite>
+        <sprite>sprites\spr_eaglesu</sprite>
+      </sprites>
+      <sprites name="spr_mother">
+        <sprite>sprites\spr_momdown</sprite>
+        <sprite>sprites\spr_momleft</sprite>
+        <sprite>sprites\spr_momright</sprite>
+        <sprite>sprites\spr_momup</sprite>
+      </sprites>
     </sprites>
     <sprites name="Usefull Sprites">
       <sprite>sprites\spr_cinemabar</sprite>
@@ -48,6 +57,7 @@
       <sprite>sprites\spr_invisible</sprite>
       <sprite>sprites\spr_collision</sprite>
       <sprite>sprites\spr_collisionwater</sprite>
+      <sprite>sprites\spr_textArrow</sprite>
       <sprite>sprites\spr_camera</sprite>
     </sprites>
     <sprites name="Scenary Sprites">
@@ -120,23 +130,55 @@
     <object>objects\obj_compa1</object>
     <object>objects\obj_desplaza</object>
     <object>objects\obj_parametres</object>
-    <object>objects\obj_tree1</object>
-    <object>objects\obj_tree2</object>
-    <object>objects\obj_collisionwater</object>
-    <object>objects\obj_collision</object>
-    <object>objects\obj_player</object>
-    <object>objects\obj_autoplayer</object>
-    <object>objects\obj_father</object>
-    <object>objects\obj_dog</object>
-    <object>objects\obj_wood</object>
-    <object>objects\obj_wood2</object>
-    <object>objects\obj_camera</object>
-    <object>objects\obj_portal</object>
+    <objects name="usefull">
+      <object>objects\obj_autoplayer</object>
+      <object>objects\obj_collisionwater</object>
+      <object>objects\obj_collision</object>
+      <object>objects\obj_camera</object>
+      <object>objects\obj_gameController</object>
+    </objects>
+    <objects name="Characters">
+      <object>objects\obj_player</object>
+      <object>objects\obj_dog</object>
+      <object>objects\obj_father</object>
+      <object>objects\obj_mom</object>
+      <object>objects\obj_eagle</object>
+    </objects>
+    <objects name="objects">
+      <object>objects\obj_wood</object>
+      <object>objects\obj_wood2</object>
+      <object>objects\obj_tree1</object>
+      <object>objects\obj_tree2</object>
+    </objects>
     <objects name="Conversations">
       <object>objects\obj_ConBaseChoose</object>
       <object>objects\obj_ConBaseAut</object>
       <object>objects\obj_cnv1</object>
       <object>objects\obj_cnv2</object>
+      <object>objects\obj_cnv3</object>
+      <object>objects\obj_cnv4</object>
+      <object>objects\obj_cnv5</object>
+      <object>objects\obj_cnv5b</object>
+      <object>objects\obj_cnv6</object>
+      <object>objects\obj_cnv7</object>
+      <object>objects\obj_cnv8</object>
+      <object>objects\obj_cnv9</object>
+      <object>objects\obj_cnv10</object>
+      <object>objects\obj_cnv11</object>
+      <object>objects\obj_cnv12</object>
+      <object>objects\obj_cnv17b</object>
+      <object>objects\obj_cnv14</object>
+      <object>objects\obj_cnv15</object>
+      <object>objects\obj_cnv16</object>
+      <object>objects\obj_cnv17</object>
+      <object>objects\obj_cnv18</object>
+      <object>objects\obj_cnv19</object>
+      <object>objects\obj_cnv20</object>
+      <object>objects\obj_cnv21</object>
+      <object>objects\obj_cnv22______</object>
+      <object>objects\obj_cnv23</object>
+      <object>objects\obj_cnv24</object>
+      <object>objects\obj_cnv25</object>
       <object>objects\obj_cnv_trigger</object>
       <object>objects\obj_cinemabar</object>
     </objects>
@@ -172,19 +214,19 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\Casa</room>
     <room>rooms\Bosque1</room>
-    <room>rooms\Bosque3</room>
     <room>rooms\Bosque2</room>
+    <room>rooms\Bosque3</room>
+    <room>rooms\Pueblo</room>
+    <room>rooms\Lago</room>
     <room>rooms\puzzle1</room>
     <room>rooms\puzzle2</room>
-    <room>rooms\Casa</room>
-    <room>rooms\Lago</room>
-    <room>rooms\Pueblo</room>
     <room>rooms\ParqueSur</room>
     <room>rooms\Parque</room>
-    <room>rooms\Ciudad</room>
     <room>rooms\CiudadNorte</room>
     <room>rooms\CiudadEste</room>
+    <room>rooms\Ciudad</room>
     <room>rooms\Bar</room>
     <room>rooms\AlcantarillaCajas</room>
     <room>rooms\Alcantarilla</room>
