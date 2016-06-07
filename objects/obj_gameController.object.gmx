@@ -159,6 +159,7 @@ if room=Pueblo &amp;&amp; last="lago-pueblo"{
 if room=Casa {
     if cheese=false instance_create(view_xview+352,view_yview+192,obj_cheese)
     if !instance_exists(obj_player){
+        obj_player.Looking="Up";
         instance_create(view_xview+320,view_yview+288,obj_player)
         instance_create(view_xview+320,view_yview+288+32,obj_dog)
     }
@@ -167,13 +168,16 @@ if room=Casa {
 if room=Lago &amp;&amp; puzzle1done=false {
     if !instance_exists(obj_player){
         instance_create(view_xview+512,view_yview+160,obj_player)
+        obj_player.Looking="Left";
         instance_create(view_xview+512+32,view_yview+160,obj_dog)
     }
 }
 if room=Lago &amp;&amp; puzzle1done=true {
     if !instance_exists(obj_player){
         instance_create(view_xview+256,view_yview+160,obj_player)
+        obj_player.Looking="Left";
         instance_create(view_xview+256+32,view_yview+160,obj_dog)
+        obj_dog.sprite_index=spr_dog_ls;
         obj_player.cinematic=true;
         //instance_create(x,y,obj_moonlight);
         instance_create(x,y,obj_cnv4);

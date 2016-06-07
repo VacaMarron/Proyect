@@ -123,6 +123,8 @@
       <sprite>sprites\spr_tuberiamojada</sprite>
       <sprite>sprites\spr_cheese</sprite>
       <sprite>sprites\spr_wood23</sprite>
+      <sprite>sprites\spr_barthing</sprite>
+      <sprite>sprites\spr_fence</sprite>
     </sprites>
     <sprites name="puzzle1">
       <sprite>sprites\sprBlock1</sprite>
@@ -203,6 +205,12 @@
       <object>objects\obj_father</object>
       <object>objects\obj_mom</object>
       <object>objects\obj_eagle</object>
+      <object>objects\obj_barman</object>
+      <object>objects\obj_trump</object>
+      <object>objects\obj_sylla</object>
+      <object>objects\obj_vincent</object>
+      <object>objects\obj_gabriel</object>
+      <object>objects\obj_geralt</object>
     </objects>
     <objects name="objects">
       <object>objects\obj_wood</object>
@@ -218,6 +226,8 @@
       <object>objects\obj_tuberiamojada</object>
       <object>objects\obj_cheese</object>
       <object>objects\obj_wood23</object>
+      <object>objects\obj_barthing</object>
+      <object>objects\obj_fence</object>
     </objects>
     <objects name="Conversations">
       <object>objects\obj_ConBaseChoose</object>
@@ -290,13 +300,13 @@
     <room>rooms\Casa</room>
     <room>rooms\Lago</room>
     <room>rooms\puzzle1</room>
-    <room>rooms\puzzle2</room>
-    <room>rooms\ParqueSur</room>
     <room>rooms\Parque</room>
+    <room>rooms\ParqueSur</room>
     <room>rooms\CiudadNorte</room>
     <room>rooms\CiudadEste</room>
     <room>rooms\Ciudad</room>
     <room>rooms\Bar</room>
+    <room>rooms\puzzle2</room>
     <room>rooms\AlcantarillaCajas</room>
     <room>rooms\Alcantarilla</room>
     <room>rooms\StreetFighter</room>
