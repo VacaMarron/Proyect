@@ -102,7 +102,7 @@ alarm[0]=1
 }
 
 //React to inputs
-if (line&lt;1 &amp;&amp; keyboard_check_pressed(ord('A')) &amp;&amp; ready=true) {
+if (line&lt;2 &amp;&amp; keyboard_check_pressed(ord('A')) &amp;&amp; ready=true) {
     line+=1;
 }
 
@@ -116,7 +116,11 @@ BarUp.down=false;
 }
 
 //If contador=5 we blow the object
+
 if line==2 {
+    room_goto(Parque);
+}
+/*if line==2 {
     if instance_exists(obj_cinemabar) obj_cinemabar.finished=true;
     if !instance_exists(obj_cinemabar){
         obj_player.Looking="Down"

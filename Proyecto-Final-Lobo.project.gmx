@@ -105,6 +105,7 @@
       <sprite>sprites\spr_cinemaname</sprite>
       <sprite>sprites\spr_invisible</sprite>
       <sprite>sprites\spr_collision</sprite>
+      <sprite>sprites\spr_puzzleTrigger</sprite>
       <sprite>sprites\spr_collisionwater</sprite>
       <sprite>sprites\spr_textArrow</sprite>
       <sprite>sprites\spr_camera</sprite>
@@ -191,6 +192,7 @@
       <object>objects\obj_autoplayer</object>
       <object>objects\obj_collisionwater</object>
       <object>objects\obj_collision</object>
+      <object>objects\obj_puzzletrigger</object>
       <object>objects\obj_camera</object>
       <object>objects\obj_gameController</object>
       <object>objects\obj_portal</object>

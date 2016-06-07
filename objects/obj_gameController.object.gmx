@@ -38,6 +38,8 @@ CNV11 = false
 CNV12 = false
 last = 0;
 cheese=false;
+puzzle1done=false;
+puzzle2done=false;
 </string>
           </argument>
         </arguments>
@@ -162,10 +164,26 @@ if room=Casa {
     }
 }
 
-if room=Lago {
+if room=Lago &amp;&amp; puzzle1done=false {
     if !instance_exists(obj_player){
         instance_create(view_xview+512,view_yview+160,obj_player)
         instance_create(view_xview+512+32,view_yview+160,obj_dog)
+    }
+}
+if room=Lago &amp;&amp; puzzle1done=true {
+    if !instance_exists(obj_player){
+        instance_create(view_xview+256,view_yview+160,obj_player)
+        instance_create(view_xview+256+32,view_yview+160,obj_dog)
+        obj_player.cinematic=true;
+        //instance_create(x,y,obj_moonlight);
+        instance_create(x,y,obj_cnv4);
+    }
+}
+
+if room=Parque &amp;&amp; last!="ParqueSur-Parque"{
+    if !instance_exists(obj_player){
+        instance_create(view_xview+256,view_yview+260,obj_player)
+        instance_create(view_xview+256+32,view_yview+260,obj_dog)
     }
 }
 </string>

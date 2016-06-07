@@ -232,6 +232,7 @@ if line==12 {
     if !instance_exists(obj_cinemabar){
         obj_player.Looking="Down"
         obj_player.stopped=false;
+        obj_player.cinematic=false;
         instance_destroy();
     }
 }

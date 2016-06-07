@@ -176,7 +176,8 @@ objBlock11.y = 300 &amp;&amp;
 objBlock13.y = 300 &amp;&amp;
 objBlock9.y = 300)
 {
-    show_debug_message("good job")
+    obj_gameController.puzzle1done=true;
+    room_goto(Lago);
 }
 else
 {
