@@ -99,6 +99,8 @@
         <sprite>sprites\spr_syllaleftW</sprite>
         <sprite>sprites\spr_syllarightW</sprite>
       </sprites>
+      <sprite>sprites\spr_werewolfFinal</sprite>
+      <sprite>sprites\spr_deadMan</sprite>
     </sprites>
     <sprites name="Usefull Sprites">
       <sprite>sprites\spr_cinemabar</sprite>
