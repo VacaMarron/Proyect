@@ -182,7 +182,6 @@
     <font>fonts\fnt_det</font>
   </fonts>
   <objects name="objects">
-    <object>objects\object0</object>
     <object>objects\object7</object>
     <object>objects\obj_compa2</object>
     <object>objects\obj_compa1</object>
@@ -194,6 +193,7 @@
       <object>objects\obj_collision</object>
       <object>objects\obj_camera</object>
       <object>objects\obj_gameController</object>
+      <object>objects\obj_portal</object>
     </objects>
     <objects name="Characters">
       <object>objects\obj_player</object>
@@ -281,11 +281,11 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\Casa</room>
     <room>rooms\Bosque1</room>
     <room>rooms\Bosque2</room>
     <room>rooms\Bosque3</room>
     <room>rooms\Pueblo</room>
+    <room>rooms\Casa</room>
     <room>rooms\Lago</room>
     <room>rooms\puzzle1</room>
     <room>rooms\puzzle2</room>

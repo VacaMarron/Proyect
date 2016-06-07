@@ -53,7 +53,8 @@ moveTimer=0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if yet=true {
+            <string>if instance_exists(obj_player){
+if yet=true {
     
     if place_meeting(x,y,obj_collisionwater){
         with(instance_place(x,y,obj_collisionwater)) {
@@ -91,6 +92,26 @@ moveTimer=0;
             ySpeed=moveSpeed;
             }
     }
+    if obj_player.Looking="Left" &amp;&amp; obj_player.x==(x+32) 
+        &amp;&amp; ((obj_player.y==y) || (obj_player.y==(y+32))) 
+        &amp;&amp; keyboard_check(ord('A')) {
+        if place_free(x-32,y) {
+            yet=false
+            moveTimer=gridSize;
+            xSpeed=-moveSpeed;
+            ySpeed=0;
+            }
+    }
+    if obj_player.Looking="Up" &amp;&amp; obj_player.y==(y+64) 
+        &amp;&amp; (obj_player.x==x)
+        &amp;&amp; keyboard_check(ord('A')) {
+        if place_free(x,y-32) || place_meeting(x,y-32,obj_collisionwater) {
+            yet=false
+            moveTimer=gridSize;
+            xSpeed=0;
+            ySpeed=-moveSpeed;
+            }
+    }
 }
 if yet=false{
         x+=xSpeed;
@@ -98,6 +119,7 @@ if yet=false{
         moveTimer-=moveSpeed
         if moveTimer==0 yet=true;
     }
+}
 </string>
           </argument>
         </arguments>

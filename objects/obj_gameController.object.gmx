@@ -36,7 +36,55 @@ CNV9 = false
 CNV10 = false
 CNV11 = false
 CNV12 = false
-
+last = 0;
+cheese=false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string></string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if room=Casa last="casa-pueblo"
+if room=Lago last="lago-pueblo"
+if room=Bosque3 last="bosque3-pueblo"
 </string>
           </argument>
         </arguments>
@@ -60,7 +108,65 @@ CNV12 = false
           <argument>
             <kind>1</kind>
             <string>if room=Bosque2 &amp;&amp; CNV2=false{
-    instance_create(x,y,obj_cnv2);
+    if !instance_exists(obj_player){
+        instance_create(view_xview+288,view_yview+244-18,obj_eagle);
+        instance_create(view_xview+256,view_yview-32,obj_player);
+        obj_player.cinematic=true;
+        instance_create(view_xview+256,view_yview-64,obj_dog)
+        instance_create(x,y,obj_cnv2);
+    }
+}
+if room=Bosque2 &amp;&amp; CNV2=true{
+    if !instance_exists(obj_player){
+        instance_create(view_xview+256,view_yview+384,obj_player)
+        instance_create(view_xview+256,view_yview+416,obj_dog)
+    }
+}
+if room=Bosque3 {
+    if !instance_exists(obj_player){
+        instance_create(view_xview+256,view_yview+0,obj_player)
+        instance_create(view_xview+256,view_yview-32,obj_dog)
+        /*with(obj_wood) instance_destroy()
+        instance_create(160,64,obj_wood)
+        instance_create(256,96,obj_wood)*/
+    }
+}
+
+
+if room=Pueblo &amp;&amp; last="bosque3-pueblo"{
+    if !instance_exists(obj_player){
+        instance_create(view_xview+256,view_yview+0,obj_player)
+        instance_create(view_xview+256,view_yview-32,obj_dog)
+    }
+}
+
+if room=Pueblo &amp;&amp; last="casa-pueblo"{
+    if !instance_exists(obj_player){
+        instance_create(view_xview+64,view_yview+288,obj_player)
+        instance_create(view_xview+64,view_yview+288-32,obj_dog)
+    }
+}
+
+if room=Pueblo &amp;&amp; last="lago-pueblo"{
+    if !instance_exists(obj_player){
+        instance_create(view_xview+0,view_yview+352,obj_player)
+        instance_create(view_xview-32,view_yview+352,obj_dog)
+    }
+}
+
+if room=Casa {
+    if cheese=false instance_create(view_xview+352,view_yview+192,obj_cheese)
+    if !instance_exists(obj_player){
+        instance_create(view_xview+320,view_yview+288,obj_player)
+        instance_create(view_xview+320,view_yview+288+32,obj_dog)
+    }
+}
+
+if room=Lago {
+    if !instance_exists(obj_player){
+        instance_create(view_xview+512,view_yview+160,obj_player)
+        instance_create(view_xview+512+32,view_yview+160,obj_dog)
+    }
 }
 </string>
           </argument>
