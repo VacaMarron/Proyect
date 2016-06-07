@@ -40,6 +40,7 @@ count1=0;
 count2=0;
 count3=0;
 
+obj_gameController.cartel=true;
 
 ready=false;
 
@@ -142,7 +143,6 @@ BarUp.down=false;
 if line==4 {
     if instance_exists(obj_cinemabar) obj_cinemabar.finished=true;
     if !instance_exists(obj_cinemabar){
-        obj_player.Looking="Down"
         obj_player.stopped=false;
         instance_destroy();
     }

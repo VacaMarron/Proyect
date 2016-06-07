@@ -7,7 +7,67 @@
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
-  <events/>
+  <events>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if keyboard_check_pressed(ord('A')) &amp;&amp; distance_to_object(obj_player)&lt;35{
+    if (obj_player.Looking=="Right" &amp;&amp; x&gt;obj_player.x &amp;&amp; y&gt;obj_player.y-5 &amp;&amp; y&lt;obj_player.y+5){
+        if obj_gameController.trumpcheese1=false {
+            instance_create(x,y,obj_cnv12);
+        }
+        if obj_gameController.trumpcheese1=true &amp;&amp; obj_gameController.trumpcheese2=true &amp;&amp; obj_gameController.trumpcheese3=false  &amp;&amp; obj_gameController.cheese=true {
+            sprite_index=spr_trumpleft
+            obj_gameController.trumpcheese3=true;
+            
+            instance_create(x,y,obj_cnv14);
+        }
+    }
+    if (obj_player.Looking=="Left" &amp;&amp; x&lt;obj_player.x &amp;&amp; y&gt;obj_player.y-5 &amp;&amp; y&lt;obj_player.y+5){
+        if obj_gameController.trumpcheese1=false {
+            obj_gameController.trumpcheese1=true
+            instance_create(x,y,obj_cnv12);
+        }
+        if obj_gameController.trumpcheese1=true &amp;&amp; obj_gameController.trumpcheese2=true &amp;&amp; obj_gameController.trumpcheese3=false  &amp;&amp; obj_gameController.cheese=true {
+            sprite_index=spr_trumpright
+            obj_gameController.trumpcheese3=true;
+            
+            instance_create(x,y,obj_cnv14);
+        }
+    }
+    if (obj_player.Looking=="Up" &amp;&amp; y&lt;obj_player.y &amp;&amp; x&lt;obj_player.x+5 &amp;&amp; x&gt;obj_player.x-5){
+        if obj_gameController.trumpcheese1=false {
+            obj_gameController.trumpcheese1=true
+            instance_create(x,y,obj_cnv12);
+        }
+        if obj_gameController.trumpcheese1=true &amp;&amp; obj_gameController.trumpcheese2=true &amp;&amp; obj_gameController.trumpcheese3=false  &amp;&amp; obj_gameController.cheese=true {
+            sprite_index=spr_trumpdown
+            obj_gameController.trumpcheese3=true;
+            
+            instance_create(x,y,obj_cnv14);
+        }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>

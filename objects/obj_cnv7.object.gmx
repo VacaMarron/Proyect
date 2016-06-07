@@ -36,7 +36,8 @@ text3 = "..."
 text4 = "Yes… I feel the same...#none of this gives me good vibrations"
 
 
-
+obj_gameController.scary=true;
+obj_player.Looking="Left"
 
 count1=0;
 count2=0;
@@ -156,7 +157,6 @@ BarUp.down=false;
 if line==5 {
     if instance_exists(obj_cinemabar) obj_cinemabar.finished=true;
     if !instance_exists(obj_cinemabar){
-        obj_player.Looking="Down"
         obj_player.stopped=false;
         instance_destroy();
     }

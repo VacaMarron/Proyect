@@ -99,8 +99,12 @@
         <sprite>sprites\spr_syllaleftW</sprite>
         <sprite>sprites\spr_syllarightW</sprite>
       </sprites>
-      <sprite>sprites\spr_werewolfFinal</sprite>
-      <sprite>sprites\spr_deadMan</sprite>
+      <sprites name="spr_werewolfFinal">
+        <sprite>sprites\spr_werewolfFinal</sprite>
+      </sprites>
+      <sprites name="spr_deadMan">
+        <sprite>sprites\spr_deadMan</sprite>
+      </sprites>
     </sprites>
     <sprites name="Usefull Sprites">
       <sprite>sprites\spr_cinemabar</sprite>
@@ -127,6 +131,7 @@
       <sprite>sprites\spr_wood23</sprite>
       <sprite>sprites\spr_barthing</sprite>
       <sprite>sprites\spr_fence</sprite>
+      <sprite>sprites\spr_table</sprite>
     </sprites>
     <sprites name="puzzle1">
       <sprite>sprites\sprBlock1</sprite>
@@ -213,6 +218,7 @@
       <object>objects\obj_vincent</object>
       <object>objects\obj_gabriel</object>
       <object>objects\obj_geralt</object>
+      <object>objects\obj_deadMan</object>
     </objects>
     <objects name="objects">
       <object>objects\obj_wood</object>
@@ -230,6 +236,8 @@
       <object>objects\obj_wood23</object>
       <object>objects\obj_barthing</object>
       <object>objects\obj_fence</object>
+      <object>objects\obj_table</object>
+      <object>objects\obj_cloaca</object>
     </objects>
     <objects name="Conversations">
       <object>objects\obj_ConBaseChoose</object>
@@ -247,11 +255,11 @@
       <object>objects\obj_cnv10</object>
       <object>objects\obj_cnv11</object>
       <object>objects\obj_cnv12</object>
-      <object>objects\obj_cnv17b</object>
       <object>objects\obj_cnv14</object>
       <object>objects\obj_cnv15</object>
       <object>objects\obj_cnv16</object>
       <object>objects\obj_cnv17</object>
+      <object>objects\obj_cnv17b</object>
       <object>objects\obj_cnv18</object>
       <object>objects\obj_cnv19</object>
       <object>objects\obj_cnv20</object>
@@ -261,6 +269,7 @@
       <object>objects\obj_cnv24</object>
       <object>objects\obj_cnv25</object>
       <object>objects\obj_cnv_trigger</object>
+      <object>objects\obj_triggerbar</object>
       <object>objects\obj_cinemabar</object>
     </objects>
     <objects name="puzzle1">
@@ -295,6 +304,7 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\Parque</room>
     <room>rooms\Bosque1</room>
     <room>rooms\Bosque2</room>
     <room>rooms\Bosque3</room>
@@ -302,11 +312,10 @@
     <room>rooms\Casa</room>
     <room>rooms\Lago</room>
     <room>rooms\puzzle1</room>
-    <room>rooms\Parque</room>
     <room>rooms\ParqueSur</room>
+    <room>rooms\Ciudad</room>
     <room>rooms\CiudadNorte</room>
     <room>rooms\CiudadEste</room>
-    <room>rooms\Ciudad</room>
     <room>rooms\Bar</room>
     <room>rooms\puzzle2</room>
     <room>rooms\AlcantarillaCajas</room>

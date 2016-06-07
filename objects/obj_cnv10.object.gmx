@@ -33,15 +33,17 @@ alarm[0]=1
 text1 = "WOOF WOOF"
 text2 = "Yes… stay out of this, go back to the park,#I don’t know how the things are going to get..."
 
-
-
 count1=0;
 count2=0;
 
+obj_gameController.noDog=true;
+obj_gameController.CNV10=true;
 
 ready=false;
 
 obj_player.cambio=true;
+n=0;
+status=0;
 </string>
           </argument>
         </arguments>
@@ -115,8 +117,10 @@ alarm[0]=1
 
 //React to inputs
 if (line&lt;3 &amp;&amp; keyboard_check_pressed(ord('A')) &amp;&amp; ready=true) {
-    line+=1;
+    if line=2 line=100;
+    else line+=1;
 }
+if line=100 script_execute(cinematic3);
 
 if line=0{
 BarDown=instance_create(view_xview,view_yview+416,obj_cinemabar);
@@ -129,10 +133,12 @@ BarUp.down=false;
 
 //If contador=5 we blow the object
 if line==3 {
+    obj_gameController.noDog=true
     if instance_exists(obj_cinemabar) obj_cinemabar.finished=true;
     if !instance_exists(obj_cinemabar){
-        obj_player.Looking="Down"
+        obj_player.Looking="Up"
         obj_player.stopped=false;
+        with(obj_triggerbar) instance_destroy();
         instance_destroy();
     }
 }

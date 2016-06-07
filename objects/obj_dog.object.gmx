@@ -84,7 +84,8 @@ dogreadyalarm=false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dognowX=x;
+            <string>if obj_gameController.noDog=false{
+dognowX=x;
 movedX=obj_player.x
 dognowY=y;
 movedY=obj_player.y
@@ -218,6 +219,7 @@ if yet=true{
     if ySpeed&gt;0{
         sprite_index = spr_dog_ds;
     }
+}
 }
 </string>
           </argument>

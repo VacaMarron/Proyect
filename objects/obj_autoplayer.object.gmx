@@ -64,7 +64,10 @@ n=0;
     case Bosque2:
     script_execute(cinematic2)
     break;
-    }
+    case Bar:
+    script_execute(cinematic4);
+    break;
+}
         
 </string>
           </argument>

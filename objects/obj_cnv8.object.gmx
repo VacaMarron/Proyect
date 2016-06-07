@@ -36,6 +36,8 @@ text2 = "dead"
 count1=0;
 count2=0;
 
+obj_gameController.forced=true;
+
 ready=false;
 
 obj_player.cambio=true;
@@ -128,7 +130,6 @@ BarUp.down=false;
 if line==3 {
     if instance_exists(obj_cinemabar) obj_cinemabar.finished=true;
     if !instance_exists(obj_cinemabar){
-        obj_player.Looking="Down"
         obj_player.stopped=false;
         instance_destroy();
     }

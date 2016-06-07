@@ -30,11 +30,12 @@ line=0;
 //We set the alarms
 alarm[0]=1
 //Text and counts for strings
-text1 = "Eeeeeh, fuck yeees, you’re a nice fella,#here, take this, I found it in the park"
-text2 = "*You recieved a dirty silver knife*"
+text1 = "*Want to give him your cheese? Y/N*"
+text2 = "Eeeeeh, fuck yeees, you’re a nice fella,#here, take this, I found it in the park"
+text3 = "*You recieved a dirty silver knife*"
 
-count1=0;
 count2=0;
+count3=0;
 
 
 ready=false;
@@ -63,18 +64,18 @@ obj_player.cambio=true;
           <argument>
             <kind>1</kind>
             <string>//Based on the value of contador, we do a thing or another
-if line==1 {
-    if count1&lt;string_length(text1) {
-        count1+=1
-        if string_char_at(text1,count1)!=" " {
+if line==2 {
+    if count2&lt;string_length(text2) {
+        count2+=1
+        if string_char_at(text2,count2)!=" " {
             audio_play_sound(sound0,10,false);
        }
     }
 }
-if line==2 {
-    if (count2&lt;(string_length(text2))) {
-       count2+=1
-       if string_char_at(text2,count2)!=" " {
+if line==3 {
+    if (count3&lt;(string_length(text3))) {
+       count3+=1
+       if string_char_at(text3,count3)!=" " {
             audio_play_sound(sound0,10,false);
        }
        }
@@ -113,8 +114,16 @@ alarm[0]=1
 }
 
 //React to inputs
-if (line&lt;3 &amp;&amp; keyboard_check_pressed(ord('A')) &amp;&amp; ready=true) {
+if (line&lt;4 &amp;&amp; line!=1 &amp;&amp; keyboard_check_pressed(ord('A')) &amp;&amp; ready=true) {
     line+=1;
+}
+if line=1 &amp;&amp; keyboard_check_pressed(ord('Y')) {
+    obj_gameController.knife=true;
+    line=2
+}
+if line=1 &amp;&amp; keyboard_check_pressed(ord('N')) {
+    obj_gameController.trumpcheese3=false;
+    line=4
 }
 
 if line=0{
@@ -127,10 +136,9 @@ BarUp.down=false;
 }
 
 //If contador=5 we blow the object
-if line==3 {
+if line==4 {
     if instance_exists(obj_cinemabar) obj_cinemabar.finished=true;
     if !instance_exists(obj_cinemabar){
-        obj_player.Looking="Down"
         obj_player.stopped=false;
         instance_destroy();
     }
@@ -162,18 +170,22 @@ draw_set_color(c_white);
 draw_set_font(fnt_det);
 
 if line==1 {
-    draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"FATHER");
-    draw_text(view_xview+20,view_yview+332,string_copy(text1,1,count1)); //We draw a string according to count1
-    if count1==string_length(text1) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
+    draw_text(view_xview+20,view_yview+332,text1); //We draw a string according to count1
     }
 
 if line==2 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"EAGLE");
-    draw_text(view_xview+20,view_yview+332,string_copy(text2,1,count2));
-    count1=0;
+    draw_text(view_xview+42,view_yview+301,"FATHER");
+    draw_text(view_xview+20,view_yview+332,string_copy(text2,1,count2)); //We draw a string according to count1
     if count2==string_length(text2) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
+    }
+
+if line==3 {
+    draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
+    draw_text(view_xview+42,view_yview+301,"EAGLE");
+    draw_text(view_xview+20,view_yview+332,string_copy(text3,1,count3));
+    count2=0;
+    if count3==string_length(text3) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
     }
 </string>
           </argument>

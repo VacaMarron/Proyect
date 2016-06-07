@@ -36,10 +36,27 @@ CNV9 = false
 CNV10 = false
 CNV11 = false
 CNV12 = false
+
 last = 0;
-cheese=false;
+
+noDog=false;
+
+cheese=true;
 puzzle1done=false;
 puzzle2done=false;
+dead1=false;
+deadready=false;
+dead2=false;
+cartel=false;
+forced=false;
+scary=false;
+gopub=false;
+pub=false;
+
+trumpcheese1=false;
+trumpcheese2=false;
+trumpcheese3=false;
+knife=false;
 </string>
           </argument>
         </arguments>
@@ -62,7 +79,24 @@ puzzle2done=false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>if dead2=true &amp;&amp; cartel=true &amp;&amp; forced=true {
+    pub=true
+}
+
+if obj_player.y&lt;256 &amp;&amp; obj_player.y&gt;64 &amp;&amp; room=CiudadNorte &amp;&amp; pub=true &amp;&amp; gopub=false &amp;&amp; !instance_exists(obj_cnv5b) &amp;&amp; !instance_exists(obj_cnv6) &amp;&amp; !instance_exists(obj_cnv8){
+    obj_player.stopped=true;
+    instance_create(view_xview+256,view_yview+96,obj_triggerbar);
+    instance_create(x,y,obj_cnv9);
+}
+
+
+if scary=false &amp;&amp; obj_player.x&gt;64 &amp;&amp; room=CiudadEste {
+    obj_player.stopped=true
+    obj_player.sprite_index=spr_player_ls
+    obj_dog.sprite_index=spr_dog_rs
+    instance_create(x,y,obj_cnv7)
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -84,9 +118,15 @@ puzzle2done=false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if room=Casa last="casa-pueblo"
-if room=Lago last="lago-pueblo"
-if room=Bosque3 last="bosque3-pueblo"
+            <string>if room=Casa last="casa"
+if room=Lago last="lago"
+if room=Bosque3 last="bosque3"
+if room=Parque last="parque"
+if room=ParqueSur last="parqueSur"
+if room=Ciudad last="ciudad"
+if room=CiudadNorte last="ciudadNorte"
+if room=CiudadEste last="ciudadEste"
+if room=Bar last="bar"
 </string>
           </argument>
         </arguments>
@@ -128,28 +168,25 @@ if room=Bosque3 {
     if !instance_exists(obj_player){
         instance_create(view_xview+256,view_yview+0,obj_player)
         instance_create(view_xview+256,view_yview-32,obj_dog)
-        /*with(obj_wood) instance_destroy()
-        instance_create(160,64,obj_wood)
-        instance_create(256,96,obj_wood)*/
     }
 }
 
 
-if room=Pueblo &amp;&amp; last="bosque3-pueblo"{
+if room=Pueblo &amp;&amp; last="bosque3"{
     if !instance_exists(obj_player){
         instance_create(view_xview+256,view_yview+0,obj_player)
         instance_create(view_xview+256,view_yview-32,obj_dog)
     }
 }
 
-if room=Pueblo &amp;&amp; last="casa-pueblo"{
+if room=Pueblo &amp;&amp; last="casa"{
     if !instance_exists(obj_player){
         instance_create(view_xview+64,view_yview+288,obj_player)
         instance_create(view_xview+64,view_yview+288-32,obj_dog)
     }
 }
 
-if room=Pueblo &amp;&amp; last="lago-pueblo"{
+if room=Pueblo &amp;&amp; last="lago"{
     if !instance_exists(obj_player){
         instance_create(view_xview+0,view_yview+352,obj_player)
         instance_create(view_xview-32,view_yview+352,obj_dog)
@@ -159,8 +196,8 @@ if room=Pueblo &amp;&amp; last="lago-pueblo"{
 if room=Casa {
     if cheese=false instance_create(view_xview+352,view_yview+192,obj_cheese)
     if !instance_exists(obj_player){
-        obj_player.Looking="Up";
         instance_create(view_xview+320,view_yview+288,obj_player)
+        obj_player.Looking="Up";
         instance_create(view_xview+320,view_yview+288+32,obj_dog)
     }
 }
@@ -168,14 +205,14 @@ if room=Casa {
 if room=Lago &amp;&amp; puzzle1done=false {
     if !instance_exists(obj_player){
         instance_create(view_xview+512,view_yview+160,obj_player)
-        obj_player.Looking="Left";
+        obj_player.sprite_index=spr_player_ls;
         instance_create(view_xview+512+32,view_yview+160,obj_dog)
     }
 }
 if room=Lago &amp;&amp; puzzle1done=true {
     if !instance_exists(obj_player){
         instance_create(view_xview+256,view_yview+160,obj_player)
-        obj_player.Looking="Left";
+        obj_player.sprite_index=spr_player_ls;
         instance_create(view_xview+256+32,view_yview+160,obj_dog)
         obj_dog.sprite_index=spr_dog_ls;
         obj_player.cinematic=true;
@@ -184,12 +221,93 @@ if room=Lago &amp;&amp; puzzle1done=true {
     }
 }
 
-if room=Parque &amp;&amp; last!="ParqueSur-Parque"{
+if room=Parque &amp;&amp; last="lago"{
     if !instance_exists(obj_player){
-        instance_create(view_xview+256,view_yview+260,obj_player)
-        instance_create(view_xview+256+32,view_yview+260,obj_dog)
+        instance_create(view_xview+256,view_yview+192+32,obj_player)
+        instance_create(view_xview+256,view_yview+192,obj_dog)
     }
 }
+
+if room=Parque &amp;&amp; last="parqueSur"{
+    if !instance_exists(obj_player){
+        instance_create(view_xview+256,view_yview+384,obj_player)
+        obj_player.sprite_index=spr_player_us
+        if noDog=false instance_create(view_xview+256,view_yview+384+32,obj_dog)
+    }
+}
+
+if room=ParqueSur &amp;&amp; last="parque"{
+    if !instance_exists(obj_player){
+        instance_create(view_xview+256,view_yview,obj_player)
+        if noDog=false instance_create(view_xview+256,view_yview+32,obj_dog)
+    }
+}
+
+if room=ParqueSur &amp;&amp; last="ciudad"{
+    if !instance_exists(obj_player){
+        instance_create(view_xview+512,view_yview+192,obj_player)
+        obj_player.sprite_index=spr_player_ls
+        if noDog=false instance_create(view_xview+512-32,view_yview+192,obj_dog)
+    }
+}
+
+if room=Ciudad &amp;&amp; last="parqueSur"{
+    if !instance_exists(obj_player){
+        instance_create(view_xview,view_yview+192,obj_player)
+        obj_player.sprite_index=spr_player_rs
+        if noDog=false instance_create(view_xview-32,view_yview+192,obj_dog)
+    }
+}
+if room=Ciudad &amp;&amp; last="ciudadNorte"{
+    if !instance_exists(obj_player){
+        instance_create(view_xview+352,view_yview,obj_player)
+        if noDog=false instance_create(view_xview+352,view_yview-32,obj_dog)
+    }
+}
+if room=Ciudad &amp;&amp; last="ciudadEste"{
+    if !instance_exists(obj_player){
+        instance_create(view_xview+512,view_yview+244,obj_player)
+        obj_player.sprite_index=spr_player_ls
+        if noDog=false instance_create(view_xview+512+32,view_yview+244,obj_dog)
+    }
+}
+if room=CiudadEste {
+    if !instance_exists(obj_player){
+        instance_create(view_xview,view_yview+256,obj_player)
+        obj_player.sprite_index=spr_player_rs
+        if noDog=false instance_create(view_xview-32,view_yview+256,obj_dog)
+    }
+}
+
+if room=CiudadNorte &amp;&amp; last="ciudad"{
+    if !instance_exists(obj_player){
+        instance_create(view_xview+352,view_yview+384,obj_player)
+        obj_player.sprite_index=spr_player_us
+        if noDog=false instance_create(view_xview+352,view_yview+384+32,obj_dog)
+    }
+}
+if room=CiudadNorte &amp;&amp; last="bar"{
+    if !instance_exists(obj_player){
+        instance_create(view_xview+256,view_yview+96,obj_player)
+        if noDog=false instance_create(view_xview+256,view_yview+96-32,obj_dog)
+    }
+}
+if room=Bar {
+    if gopub=true noDog=true
+    if !instance_exists(obj_player){
+        instance_create(view_xview+320,view_yview+320,obj_player)
+        obj_player.sprite_index=spr_player_us
+        if noDog=false instance_create(view_xview+320,view_yview+288+32,obj_dog)
+        if CNV10=true &amp;&amp; CNV11=false {
+            CNV11=true;
+            instance_create(view_xview+128,view_yview+224,obj_geralt)
+            instance_create(view_xview+160,view_yview+256,obj_vincent)
+            instance_create(view_xview+128,view_yview+256,obj_gabriel)
+            instance_create(x,y,obj_autoplayer)
+        }
+    }
+}
+
 </string>
           </argument>
         </arguments>

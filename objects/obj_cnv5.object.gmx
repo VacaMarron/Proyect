@@ -34,6 +34,7 @@ text1 = "Blacked out and extremly pale...#alcohol can’t leave a man like this.
 
 count1=0;
 
+obj_gameController.dead1=true;
 
 ready=false;
 
@@ -119,8 +120,9 @@ BarUp.down=false;
 if line==2 {
     if instance_exists(obj_cinemabar) obj_cinemabar.finished=true;
     if !instance_exists(obj_cinemabar){
-        obj_player.Looking="Down"
+        obj_gameController.deadready=true;
         obj_player.stopped=false;
+        obj_gameController.dead1=true;
         instance_destroy();
     }
 }
