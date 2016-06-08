@@ -57,6 +57,17 @@ trumpcheese1=false;
 trumpcheese2=false;
 trumpcheese3=false;
 knife=false;
+
+vincentDead=false;
+CNV15=false
+CNV15done=false
+CNV16=false
+CNV16done=false
+CNV17=false
+CNV17done=false
+CNV17b=false
+
+stinks=false;
 </string>
           </argument>
         </arguments>
@@ -95,6 +106,13 @@ if scary=false &amp;&amp; obj_player.x&gt;64 &amp;&amp; room=CiudadEste {
     obj_player.sprite_index=spr_player_ls
     obj_dog.sprite_index=spr_dog_rs
     instance_create(x,y,obj_cnv7)
+}
+
+if vincentDead=true &amp;&amp; obj_player.x&gt;64 &amp;&amp; room=CiudadEste &amp;&amp; stinks=false{
+    stinks=true;
+    obj_player.stopped=true
+    obj_player.sprite_index=spr_player_rs
+    instance_create(x,y,obj_cnv18)
 }
 </string>
           </argument>
@@ -239,7 +257,7 @@ if room=Parque &amp;&amp; last="parqueSur"{
 if room=ParqueSur &amp;&amp; last="parque"{
     if !instance_exists(obj_player){
         instance_create(view_xview+256,view_yview,obj_player)
-        if noDog=false instance_create(view_xview+256,view_yview+32,obj_dog)
+        if noDog=false instance_create(view_xview+256,view_yview-32,obj_dog)
     }
 }
 
@@ -266,9 +284,9 @@ if room=Ciudad &amp;&amp; last="ciudadNorte"{
 }
 if room=Ciudad &amp;&amp; last="ciudadEste"{
     if !instance_exists(obj_player){
-        instance_create(view_xview+512,view_yview+244,obj_player)
+        instance_create(view_xview+512,view_yview+192,obj_player)
         obj_player.sprite_index=spr_player_ls
-        if noDog=false instance_create(view_xview+512+32,view_yview+244,obj_dog)
+        if noDog=false instance_create(view_xview+512+32,view_yview+192,obj_dog)
     }
 }
 if room=CiudadEste {
@@ -284,25 +302,39 @@ if room=CiudadNorte &amp;&amp; last="ciudad"{
         instance_create(view_xview+352,view_yview+384,obj_player)
         obj_player.sprite_index=spr_player_us
         if noDog=false instance_create(view_xview+352,view_yview+384+32,obj_dog)
+        if CNV11=true {
+            with(obj_deadMan) instance_destroy();
+        }
+        if CNV11=true &amp;&amp; CNV12=false &amp;&amp; vincentDead=false {
+            instance_create(view_xview,view_yview+160,obj_vincent)
+            obj_vincent.sprite_index=spr_vincentleft
+        }
     }
 }
 if room=CiudadNorte &amp;&amp; last="bar"{
     if !instance_exists(obj_player){
         instance_create(view_xview+256,view_yview+96,obj_player)
         if noDog=false instance_create(view_xview+256,view_yview+96-32,obj_dog)
+        if CNV11=true {
+            with(obj_deadMan) instance_destroy();
+        }
+        if CNV11=true &amp;&amp; CNV12=false &amp;&amp; vincentDead=false {
+            instance_create(view_xview,view_yview+160,obj_vincent)
+            obj_vincent.sprite_index=spr_vincentleft
+        }
     }
 }
 if room=Bar {
     if gopub=true noDog=true
     if !instance_exists(obj_player){
         instance_create(view_xview+320,view_yview+320,obj_player)
-        obj_player.sprite_index=spr_player_us
-        if noDog=false instance_create(view_xview+320,view_yview+288+32,obj_dog)
+        obj_player.Looking="Up"
+        if noDog=false instance_create(view_xview+320,view_yview+320+32,obj_dog)
         if CNV10=true &amp;&amp; CNV11=false {
             CNV11=true;
             instance_create(view_xview+128,view_yview+224,obj_geralt)
-            instance_create(view_xview+160,view_yview+256,obj_vincent)
-            instance_create(view_xview+128,view_yview+256,obj_gabriel)
+            instance_create(view_xview+160,view_yview+224,obj_gabriel)
+            instance_create(view_xview+128,view_yview+256,obj_vincent)
             instance_create(x,y,obj_autoplayer)
         }
     }

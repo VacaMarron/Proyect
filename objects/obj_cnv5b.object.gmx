@@ -45,6 +45,7 @@ obj_gameController.dead2=true;
 ready=false;
 
 obj_player.cambio=true;
+obj_player.stopped=true;
 </string>
           </argument>
         </arguments>

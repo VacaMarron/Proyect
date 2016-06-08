@@ -34,7 +34,7 @@ text1 = "That's it, now let’s go"
 
 count1=0;
 
-
+obj_player.stopped=true;
 ready=false;
 
 obj_player.cambio=true;

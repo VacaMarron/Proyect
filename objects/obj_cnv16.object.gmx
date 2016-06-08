@@ -36,7 +36,7 @@ count1=0;
 
 
 ready=false;
-
+obj_player.stopped=true;
 obj_player.cambio=true;
 </string>
           </argument>
@@ -119,7 +119,8 @@ BarUp.down=false;
 if line==2 {
     if instance_exists(obj_cinemabar) obj_cinemabar.finished=true;
     if !instance_exists(obj_cinemabar){
-        obj_player.Looking="Down"
+        obj_vincent.sprite_index=spr_vincentleft
+        obj_gameController.CNV16done=true;
         obj_player.stopped=false;
         instance_destroy();
     }

@@ -68,10 +68,13 @@ count15=0;
 count16=0;
 count17=0;
 
+n=0;
+status=0;
 
 ready=false;
-
+obj_player.stopped=true;
 obj_player.cambio=true;
+obj_player.Looking="Up"
 </string>
           </argument>
         </arguments>
@@ -273,7 +276,8 @@ alarm[0]=1
 
 //React to inputs
 if (line&lt;18 &amp;&amp; keyboard_check_pressed(ord('A')) &amp;&amp; ready=true) {
-    line+=1;
+    if line=17 line=100
+    else line+=1;
 }
 
 if line=0{
@@ -285,11 +289,15 @@ BarUp.up=true;
 BarUp.down=false;
 }
 
-//If contador=5 we blow the object
+if line==100{
+    script_execute(cinematic5);
+    }
+
 if line==18 {
     if instance_exists(obj_cinemabar) obj_cinemabar.finished=true;
     if !instance_exists(obj_cinemabar){
-        obj_player.Looking="Down"
+        obj_player.Looking="Up"
+        obj_player.cinematic=false;
         obj_player.stopped=false;
         instance_destroy();
     }

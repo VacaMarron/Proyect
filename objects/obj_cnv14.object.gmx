@@ -39,7 +39,7 @@ count3=0;
 
 
 ready=false;
-
+obj_player.stopped=true;
 obj_player.cambio=true;
 </string>
           </argument>

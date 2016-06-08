@@ -57,7 +57,7 @@ count10=0;
 count11=0;
 
 ready=false;
-
+obj_player.stopped=true;
 obj_player.cambio=true;
 
 obj_gameController.CNV3=true;

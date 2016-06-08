@@ -42,7 +42,7 @@ count3=0;
 obj_gameController.gopub=true;
 
 ready=false;
-
+obj_player.stopped=true;
 obj_player.cambio=true;
 </string>
           </argument>

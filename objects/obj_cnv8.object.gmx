@@ -39,7 +39,7 @@ count2=0;
 obj_gameController.forced=true;
 
 ready=false;
-
+obj_player.stopped=true;
 obj_player.cambio=true;
 </string>
           </argument>

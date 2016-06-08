@@ -33,7 +33,6 @@
         if obj_gameController.trumpcheese1=true &amp;&amp; obj_gameController.trumpcheese2=true &amp;&amp; obj_gameController.trumpcheese3=false  &amp;&amp; obj_gameController.cheese=true {
             sprite_index=spr_trumpleft
             obj_gameController.trumpcheese3=true;
-            
             instance_create(x,y,obj_cnv14);
         }
     }

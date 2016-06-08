@@ -30,7 +30,7 @@ line=0;
 //We set the alarms
 alarm[0]=1
 //Text and counts for strings
-text1 = "I see... this is serious, right Eagle?"
+text1 = "It stinks in here..."
 
 count1=0;
 

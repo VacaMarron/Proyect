@@ -31,7 +31,7 @@ line=0;
 alarm[0]=1
 //Text and counts for strings
 text1 = "WOOF WOOF"
-text2 = "Yes… stay out of this, go back to the park,#I don’t know how the things are going to get..."
+text2 = "Yes... stay out of this, go back to the park,#I don’t know how the things are going to get..."
 
 count1=0;
 count2=0;
@@ -40,7 +40,10 @@ obj_gameController.noDog=true;
 obj_gameController.CNV10=true;
 
 ready=false;
-
+obj_player.stopped=true;
+if obj_dog.x&lt;obj_player.x obj_player.Looking="Left"
+if obj_dog.x&gt;obj_player.x obj_player.Looking="Righ"
+if obj_dog.y&gt;obj_player.y obj_player.Looking="Down"
 obj_player.cambio=true;
 n=0;
 status=0;
