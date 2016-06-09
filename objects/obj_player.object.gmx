@@ -58,6 +58,7 @@ cambio=false;
           <argument>
             <kind>1</kind>
             <string>if cinematic=false{
+    if keyboard_check(ord('O')) room_goto(puzzle2);
     key_right = keyboard_check(vk_right) &amp;&amp; stopped=false
     key_left = keyboard_check(vk_left) &amp;&amp; stopped=false 
     key_up = keyboard_check(vk_up) &amp;&amp; stopped=false 

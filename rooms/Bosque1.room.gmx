@@ -223,8 +223,11 @@
     <instance objName="obj_tree1" x="458" y="115" name="inst_3729956A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_portal" x="192" y="416" name="inst_929B3F98" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_autoplayer" x="-128" y="-128" name="inst_E39B0E46" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_gameController" x="-96" y="-128" name="inst_89C0F5DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_gameController" x="-160" y="-96" name="inst_89C0F5DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_cnv_trigger" x="64" y="224" name="inst_60B8FC96" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_fadeIn" x="-128" y="-96" name="inst_F4A8248D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_dark" x="-160" y="-128" name="inst_3A3833CA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tree1" x="338" y="-60" name="inst_EE69D0E5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

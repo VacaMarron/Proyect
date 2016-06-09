@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check_pressed(ord('A')) &amp;&amp; distance_to_object(obj_player)&lt;35{
+            <string>if keyboard_check_pressed(ord('A')) &amp;&amp; distance_to_object(obj_player)&lt;35 &amp;&amp; obj_gameController.stinks=false{
     if (obj_player.Looking=="Right" &amp;&amp; x&gt;obj_player.x &amp;&amp; y&gt;obj_player.y-5 &amp;&amp; y&lt;obj_player.y+5){
         if obj_gameController.forced=false instance_create(x,y,obj_cnv8);
     }
@@ -37,6 +37,21 @@
     }
     if (obj_player.Looking=="Down" &amp;&amp; y&gt;obj_player.y &amp;&amp; x&lt;obj_player.x+5 &amp;&amp; x&gt;obj_player.x-5){
         if obj_gameController.forced=false instance_create(x,y,obj_cnv8);
+    }
+}
+
+if keyboard_check_pressed(ord('A')) &amp;&amp; distance_to_object(obj_player)&lt;35 &amp;&amp; obj_gameController.stinks=true{
+    if (obj_player.Looking=="Right" &amp;&amp; x&gt;obj_player.x &amp;&amp; y&gt;obj_player.y-5 &amp;&amp; y&lt;obj_player.y+5){
+        instance_create(x,y,obj_cnv19);
+    }
+    if (obj_player.Looking=="Left" &amp;&amp; x&lt;obj_player.x &amp;&amp; y&gt;obj_player.y-5 &amp;&amp; y&lt;obj_player.y+5){
+        instance_create(x,y,obj_cnv19);
+    }
+    if (obj_player.Looking=="Up" &amp;&amp; y&lt;obj_player.y &amp;&amp; x&lt;obj_player.x+5 &amp;&amp; x&gt;obj_player.x-5){
+        instance_create(x,y,obj_cnv19);
+    }
+    if (obj_player.Looking=="Down" &amp;&amp; y&gt;obj_player.y &amp;&amp; x&lt;obj_player.x+5 &amp;&amp; x&gt;obj_player.x-5){
+        instance_create(x,y,obj_cnv19);
     }
 }
 </string>

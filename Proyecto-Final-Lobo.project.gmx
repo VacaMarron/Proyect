@@ -8,8 +8,6 @@
     <sound>sound\sound0</sound>
   </sounds>
   <sprites name="sprites">
-    <sprite>sprites\yope</sprite>
-    <sprite>sprites\prota</sprite>
     <sprite>sprites\compa1</sprite>
     <sprite>sprites\compa2</sprite>
     <sprite>sprites\sprite5</sprite>
@@ -63,6 +61,7 @@
       <sprites name="spr_vincent">
         <sprite>sprites\spr_vincentup</sprite>
         <sprite>sprites\spr_vincentdown</sprite>
+        <sprite>sprites\spr_vincentDead</sprite>
         <sprite>sprites\spr_vincentleft</sprite>
         <sprite>sprites\spr_vincentright</sprite>
         <sprite>sprites\spr_vincentupW</sprite>
@@ -105,6 +104,14 @@
       <sprites name="spr_deadMan">
         <sprite>sprites\spr_deadMan</sprite>
       </sprites>
+      <sprites name="spr_crinos">
+        <sprite>sprites\spr_vampire2</sprite>
+        <sprite>sprites\spr_vampire</sprite>
+        <sprite>sprites\spr_crinos</sprite>
+        <sprite>sprites\spr_crinosw</sprite>
+        <sprite>sprites\spr_finalWolf2</sprite>
+        <sprite>sprites\spr_finalWolf</sprite>
+      </sprites>
     </sprites>
     <sprites name="Usefull Sprites">
       <sprite>sprites\spr_cinemabar</sprite>
@@ -115,6 +122,10 @@
       <sprite>sprites\spr_collisionwater</sprite>
       <sprite>sprites\spr_textArrow</sprite>
       <sprite>sprites\spr_camera</sprite>
+      <sprite>sprites\sprite119</sprite>
+      <sprite>sprites\spr_arrowMenu</sprite>
+      <sprite>sprites\spr_controls</sprite>
+      <sprite>sprites\spr_whitefull</sprite>
     </sprites>
     <sprites name="Scenary Sprites">
       <sprite>sprites\spr_tree1</sprite>
@@ -127,6 +138,7 @@
       <sprite>sprites\spr_cartel</sprite>
       <sprite>sprites\spr_tuberia</sprite>
       <sprite>sprites\spr_tuberiamojada</sprite>
+      <sprite>sprites\spr_tuberiamojada2</sprite>
       <sprite>sprites\spr_cheese</sprite>
       <sprite>sprites\spr_wood23</sprite>
       <sprite>sprites\spr_barthing</sprite>
@@ -179,6 +191,7 @@
     <background>background\bck_AlcantarillaCajas</background>
     <background>background\bck_Alcantarilla</background>
     <background>background\bck_StreetFighter</background>
+    <background>background\bck_Menu</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\path1</path>
@@ -190,13 +203,11 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_det</font>
+    <font>fonts\fnt_menug</font>
+    <font>fonts\fnt_menum</font>
+    <font>fonts\fnt_menup</font>
   </fonts>
   <objects name="objects">
-    <object>objects\object7</object>
-    <object>objects\obj_compa2</object>
-    <object>objects\obj_compa1</object>
-    <object>objects\obj_desplaza</object>
-    <object>objects\obj_parametres</object>
     <objects name="usefull">
       <object>objects\obj_autoplayer</object>
       <object>objects\obj_collisionwater</object>
@@ -204,7 +215,21 @@
       <object>objects\obj_puzzletrigger</object>
       <object>objects\obj_camera</object>
       <object>objects\obj_gameController</object>
+      <object>objects\obj_dark</object>
+      <object>objects\obj_fadeIn</object>
+      <object>objects\obj_fadeInWhite</object>
+      <object>objects\obj_fadeOut</object>
+      <object>objects\obj_fadeOutWhite</object>
+      <object>objects\obj_fadeOutRed</object>
+      <object>objects\obj_lightTotem</object>
+      <object>objects\obj_lightHouse</object>
+      <object>objects\obj_lightMoon</object>
+      <object>objects\obj_lightEnter</object>
+      <object>objects\obj_lightBoxes</object>
       <object>objects\obj_portal</object>
+      <object>objects\obj_menu</object>
+      <object>objects\obj_final</object>
+      <object>objects\obj_controlls</object>
     </objects>
     <objects name="Characters">
       <object>objects\obj_player</object>
@@ -232,6 +257,7 @@
       <object>objects\obj_cartel</object>
       <object>objects\obj_tuberia</object>
       <object>objects\obj_tuberiamojada</object>
+      <object>objects\obj_tuberiamojada2</object>
       <object>objects\obj_cheese</object>
       <object>objects\obj_wood23</object>
       <object>objects\obj_barthing</object>
@@ -240,8 +266,8 @@
       <object>objects\obj_cloaca</object>
     </objects>
     <objects name="Conversations">
-      <object>objects\obj_ConBaseChoose</object>
       <object>objects\obj_ConBaseAut</object>
+      <object>objects\obj_ConBaseChoose</object>
       <object>objects\obj_cnv1</object>
       <object>objects\obj_cnv2</object>
       <object>objects\obj_cnv3</object>
@@ -264,7 +290,7 @@
       <object>objects\obj_cnv19</object>
       <object>objects\obj_cnv20</object>
       <object>objects\obj_cnv21</object>
-      <object>objects\obj_cnv22______</object>
+      <object>objects\obj_cnv22</object>
       <object>objects\obj_cnv23</object>
       <object>objects\obj_cnv24</object>
       <object>objects\obj_cnv25</object>
@@ -304,7 +330,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\Parque</room>
+    <room>rooms\Menu</room>
+    <room>rooms\Controls</room>
     <room>rooms\Bosque1</room>
     <room>rooms\Bosque2</room>
     <room>rooms\Bosque3</room>
@@ -312,15 +339,18 @@
     <room>rooms\Casa</room>
     <room>rooms\Lago</room>
     <room>rooms\puzzle1</room>
+    <room>rooms\Parque</room>
     <room>rooms\ParqueSur</room>
     <room>rooms\Ciudad</room>
     <room>rooms\CiudadNorte</room>
-    <room>rooms\CiudadEste</room>
     <room>rooms\Bar</room>
+    <room>rooms\CiudadEste</room>
     <room>rooms\puzzle2</room>
-    <room>rooms\AlcantarillaCajas</room>
     <room>rooms\Alcantarilla</room>
-    <room>rooms\StreetFighter</room>
+    <room>rooms\AlcantarillaCajas</room>
+    <room>rooms\cinematicfinal1</room>
+    <room>rooms\Continuara</room>
+    <room>rooms\Auxa</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

@@ -45,6 +45,8 @@ for (i = 0; i &lt; numObjs &amp;&amp; ok; ++i)
 if (ok)
 {
     show_debug_message("Puzzle finished!");
+    obj_gameController.puzzle2done=true;
+    room_goto(CiudadEste);
 }
 
 </string>

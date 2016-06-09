@@ -31,7 +31,7 @@ line=0;
 alarm[0]=1
 //Text and counts for strings
 text1 = "WOOF WOOF"
-text2 = "Yes... stay out of this, go back to the park,#I don’t know how the things are going to get..."
+text2 = "Yes... stay out of this, go back to the park,#I don't know how the things are going to get..."
 
 count1=0;
 count2=0;
@@ -173,14 +173,14 @@ draw_set_font(fnt_det);
 
 if line==1 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"FATHER");
+    draw_text(view_xview+42,view_yview+301,"GAIR");
     draw_text(view_xview+20,view_yview+332,string_copy(text1,1,count1)); //We draw a string according to count1
     if count1==string_length(text1) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
     }
 
 if line==2 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"EAGLE");
+    draw_text(view_xview+42,view_yview+301,"KIERON");
     draw_text(view_xview+20,view_yview+332,string_copy(text2,1,count2));
     count1=0;
     if count2==string_length(text2) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);

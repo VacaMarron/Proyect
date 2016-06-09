@@ -114,15 +114,7 @@ BarUp.up=true;
 BarUp.down=false;
 }
 
-//If contador=5 we blow the object
-if line==2 {
-    if instance_exists(obj_cinemabar) obj_cinemabar.finished=true;
-    if !instance_exists(obj_cinemabar){
-        obj_player.Looking="Down"
-        obj_player.stopped=false;
-        instance_destroy();
-    }
-}
+if line==2 room_goto(puzzle2);
 </string>
           </argument>
         </arguments>
@@ -151,7 +143,7 @@ draw_set_font(fnt_det);
 
 if line==1 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"FATHER");
+    draw_text(view_xview+42,view_yview+301,"KIERON");
     draw_text(view_xview+20,view_yview+332,string_copy(text1,1,count1)); //We draw a string according to count1
     if count1==string_length(text1) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
     }

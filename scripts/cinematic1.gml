@@ -212,3 +212,79 @@ switch(status){
     }
     break;
 }
+#define cinematic6
+switch(status){
+    case 0:
+    obj_player.x-=5
+    n+=5
+    if n==15 {
+        n=0
+        status=1
+    }
+    break;
+    
+    case 1:
+    obj_player.x+=5
+    n+=5
+    if n==15{
+        n=0
+        status=2
+    }
+    break;
+    
+    case 2:
+    obj_vincent.sprite_index=spr_vincentDead;
+    line=14
+    break;  
+} 
+
+#define cinematic7
+switch(status){
+    case 0:
+    obj_player.x-=5
+    n+=5
+    if n==15 {
+        n=0
+        status=1
+    }
+    break;
+    
+    case 1:
+    obj_player.x+=5
+    n+=5
+    if n==15{
+        n=0
+        status=2
+    }
+    break;
+    
+    case 2:
+    obj_vincent.sprite_index=spr_vincentDead;
+    line=11;
+    break;  
+} 
+
+#define cinematic8
+cell=32
+switch(status){
+    case 0:
+    obj_player.cinematic=true;
+    obj_player.x+=4
+    obj_player.sprite_index=spr_player_rw
+    obj_player.image_speed=0.4
+    obj_sylla.sprite_index=spr_syllarightW
+    obj_sylla.x+=4
+    //obj_sylla.sprite_index=spr_syllarightW
+    n+=4
+    if n==(cell*9) {
+        n=0;
+        status=1
+    }
+    break;
+    
+    case 1:
+    obj_player.Looking="Left"
+    obj_player.cinematic=false;
+    line=3;
+    break;
+}

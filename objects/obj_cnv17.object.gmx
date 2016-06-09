@@ -64,10 +64,37 @@ count13=0;
 count14=0;
 count15=0;
 
-
+p=0;
 ready=false;
 obj_player.stopped=true;
 obj_player.cambio=true;
+n=0;
+status=0;
+second=false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>p++;
+alarm[1]=1;
 </string>
           </argument>
         </arguments>
@@ -253,8 +280,43 @@ alarm[0]=1
 
 //React to inputs
 if (line&lt;16 &amp;&amp; keyboard_check_pressed(ord('A')) &amp;&amp; ready=true) {
-    line+=1;
+    if line==4 line=100;
+    else if line==15 line=105;
+    else line+=1;
 }
+if line=100 {
+    alarm[1]=2;
+    line=101
+}
+
+if p=10 &amp;&amp; line=101 line=102;
+
+if line=102 {
+    alarm[1]=-1
+    obj_player.sprite_index=spr_crinos;
+    p=0;
+    line=5;
+}
+
+if line=105 {
+    alarm[1]=2;
+    line=106
+}
+
+if p=10 &amp;&amp; line=106 line=107;
+
+if line=107 {
+    alarm[1]=-1
+    obj_player.sprite_index=spr_player_ls;
+    p=0;
+    line=16;
+}
+
+if line=13 script_execute(cinematic6);
+
+if line&gt;4 &amp;&amp; line&lt;16 obj_player.sprite_index=spr_crinos;
+
+if (line==14 || line==15 || line==16 || line==105 || line==107 || line==16) obj_vincent.sprite_index=spr_vincentDead;
 
 if line=0{
 BarDown=instance_create(view_xview,view_yview+416,obj_cinemabar);
@@ -273,7 +335,7 @@ if line==16 {
         obj_gameController.CNV17done=true;
         obj_gameController.vincentDead=true;
         obj_player.stopped=false;
-        instance_destroy();
+        instance_destroy();   
     }
 }
 </string>
@@ -304,14 +366,14 @@ draw_set_font(fnt_det);
 
 if line==1 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"FATHER");
+    draw_text(view_xview+42,view_yview+301,"VINCENT");
     draw_text(view_xview+20,view_yview+332,string_copy(text1,1,count1)); //We draw a string according to count1
     if count1==string_length(text1) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
     }
 
 if line==2 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"EAGLE");
+    draw_text(view_xview+42,view_yview+301,"KIERON");
     draw_text(view_xview+20,view_yview+332,string_copy(text2,1,count2));
     count1=0;
     if count2==string_length(text2) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
@@ -319,7 +381,7 @@ if line==2 {
     
 if line==3{
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"EAGLE");
+    draw_text(view_xview+42,view_yview+301,"VINCENT");
     draw_text(view_xview+20,view_yview+332,string_copy(text3,1,count3));
     count2=0;
     if count3==string_length(text3) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
@@ -327,7 +389,7 @@ if line==3{
     
 if line==4 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"EAGLE");
+    draw_text(view_xview+42,view_yview+301,"KIERON");
     draw_text(view_xview+20,view_yview+332,string_copy(text4,1,count4));
     count3=0
     if count4==string_length(text4) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
@@ -335,7 +397,7 @@ if line==4 {
      
 if line==5 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"FATHER");
+    draw_text(view_xview+42,view_yview+301,"VINCENT");
     draw_text(view_xview+20,view_yview+332,string_copy(text5,1,count5));
     count4=0
     if count5==string_length(text6) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
@@ -343,7 +405,7 @@ if line==5 {
     
 if line==6 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"KIERON");
+    draw_text(view_xview+42,view_yview+301,"VINCENT");
     draw_text(view_xview+20,view_yview+332,string_copy(text6,1,count6)); //We draw a string according to count1
     count5=0
     if count6==string_length(text6) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
@@ -367,49 +429,49 @@ if line==8{
 
 if line==9 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"KIERON");
+    draw_text(view_xview+42,view_yview+301,"VINCENT");
     draw_text(view_xview+20,view_yview+332,string_copy(text9,1,count9));
     count8=0
     if count9==string_length(text9) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);}
      
 if line==10 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"FATHER");
+    draw_text(view_xview+42,view_yview+301,"KIERON");
     draw_text(view_xview+20,view_yview+332,string_copy(text10,1,count10));
     count9=0
     if count10==string_length(text10) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);}
     
 if line==11 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"FATHER");
+    draw_text(view_xview+42,view_yview+301,"VINCENT");
     draw_text(view_xview+20,view_yview+332,string_copy(text11,1,count11)); //We draw a string according to count1
     count10=0
     if count11==string_length(text11) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);}
 
 if line==12 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"FATHER");
+    draw_text(view_xview+42,view_yview+301,"VINCENT");
     draw_text(view_xview+20,view_yview+332,string_copy(text12,1,count12));
     count11=0;
     if count12==string_length(text12) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);}
     
 if line==13{
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"FATHER");
+    draw_text(view_xview+42,view_yview+301,"KIERON");
     draw_text(view_xview+20,view_yview+332,string_copy(text13,1,count13));
     count12=0
     if count13==string_length(text13) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);}
     
 if line==14 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"FATHER");
+    draw_text(view_xview+42,view_yview+301,"VINCENT");
     draw_text(view_xview+20,view_yview+332,string_copy(text14,1,count14));
     count13=0
     if count14==string_length(text14) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);}
      
 if line==15 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"FATHER");
+    draw_text(view_xview+42,view_yview+301,"KIERON");
     draw_text(view_xview+20,view_yview+332,string_copy(text15,1,count15));
     count14=0
     if count15==string_length(text15) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);}

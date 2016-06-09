@@ -31,7 +31,7 @@ line=0;
 alarm[0]=1
 //Text and counts for strings
 text1 = "*Want to give him your cheese? Y/N*"
-text2 = "Eeeeeh, fuck yeees, you’re a nice fella,#here, take this, I found it in the park"
+text2 = "Eeeeeh, fuck yeees, you're a nice fella,#here, take this, I found it in the park"
 text3 = "*You recieved a dirty silver knife*"
 
 count2=0;
@@ -175,14 +175,12 @@ if line==1 {
 
 if line==2 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"FATHER");
+    draw_text(view_xview+42,view_yview+301,"TRUMP");
     draw_text(view_xview+20,view_yview+332,string_copy(text2,1,count2)); //We draw a string according to count1
     if count2==string_length(text2) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
     }
 
 if line==3 {
-    draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"EAGLE");
     draw_text(view_xview+20,view_yview+332,string_copy(text3,1,count3));
     count2=0;
     if count3==string_length(text3) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);

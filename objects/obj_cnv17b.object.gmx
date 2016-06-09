@@ -55,7 +55,8 @@ count9=0;
 count10=0;
 count11=0;
 
-
+n=0;
+status=0;
 ready=false;
 obj_player.stopped=true;
 obj_player.cambio=true;
@@ -211,8 +212,10 @@ alarm[0]=1
 
 //React to inputs
 if (line&lt;12 &amp;&amp; keyboard_check_pressed(ord('A')) &amp;&amp; ready=true) {
-    line+=1;
+    if line==10 line=100
+    else line+=1;
 }
+if line=100 script_execute(cinematic7)
 
 if line=0{
 BarDown=instance_create(view_xview,view_yview+416,obj_cinemabar);
@@ -225,6 +228,7 @@ BarUp.down=false;
 
 //If contador=5 we blow the object
 if line==12 {
+    with(obj_vincent) instance_destroy();
     if instance_exists(obj_cinemabar) obj_cinemabar.finished=true;
     if !instance_exists(obj_cinemabar){
         with(obj_vincent) instance_destroy();
@@ -261,14 +265,14 @@ draw_set_font(fnt_det);
 
 if line==1 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"FATHER");
+    draw_text(view_xview+42,view_yview+301,"KIERON");
     draw_text(view_xview+20,view_yview+332,string_copy(text1,1,count1)); //We draw a string according to count1
     if count1==string_length(text1) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
     }
 
 if line==2 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"EAGLE");
+    draw_text(view_xview+42,view_yview+301,"VINCENT");
     draw_text(view_xview+20,view_yview+332,string_copy(text2,1,count2));
     count1=0;
     if count2==string_length(text2) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
@@ -276,7 +280,7 @@ if line==2 {
     
 if line==3{
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"EAGLE");
+    draw_text(view_xview+42,view_yview+301,"KIERON");
     draw_text(view_xview+20,view_yview+332,string_copy(text3,1,count3));
     count2=0;
     if count3==string_length(text3) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
@@ -284,7 +288,7 @@ if line==3{
     
 if line==4 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"EAGLE");
+    draw_text(view_xview+42,view_yview+301,"VINCENT");
     draw_text(view_xview+20,view_yview+332,string_copy(text4,1,count4));
     count3=0
     if count4==string_length(text4) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
@@ -292,7 +296,7 @@ if line==4 {
      
 if line==5 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"FATHER");
+    draw_text(view_xview+42,view_yview+301,"KIERON");
     draw_text(view_xview+20,view_yview+332,string_copy(text5,1,count5));
     count4=0
     if count5==string_length(text6) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
@@ -300,7 +304,7 @@ if line==5 {
     
 if line==6 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"KIERON");
+    draw_text(view_xview+42,view_yview+301,"VINCENT");
     draw_text(view_xview+20,view_yview+332,string_copy(text6,1,count6)); //We draw a string according to count1
     count5=0
     if count6==string_length(text6) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
@@ -316,7 +320,7 @@ if line==7 {
     
 if line==8{
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"KIERON");
+    draw_text(view_xview+42,view_yview+301,"VINCENT");
     draw_text(view_xview+20,view_yview+332,string_copy(text8,1,count8));
     count7=0
     if count8==string_length(text8) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
@@ -331,14 +335,14 @@ if line==9 {
      
 if line==10 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"FATHER");
+    draw_text(view_xview+42,view_yview+301,"VINCENT");
     draw_text(view_xview+20,view_yview+332,string_copy(text10,1,count10));
     count9=0
     if count10==string_length(text10) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);}
     
 if line==11 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"FATHER");
+    draw_text(view_xview+42,view_yview+301,"KIERON");
     draw_text(view_xview+20,view_yview+332,string_copy(text11,1,count11)); //We draw a string according to count1
     count10=0
     if count11==string_length(text11) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);}

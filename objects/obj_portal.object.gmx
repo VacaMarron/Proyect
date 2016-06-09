@@ -43,7 +43,8 @@ if room=CiudadNorte &amp;&amp; obj_player.y&lt;128 room_goto(Bar)
 if room=CiudadNorte &amp;&amp; obj_player.y&gt;128 room_goto(Ciudad)
 if room=CiudadEste room_goto(Ciudad)
 if room=Bar room_goto(CiudadNorte)
-
+if room=Alcantarilla &amp;&amp; obj_player.x&gt;160 room_goto(AlcantarillaCajas)
+if room=Alcantarilla &amp;&amp; obj_player.x&lt;160 room_restart();
 </string>
           </argument>
         </arguments>

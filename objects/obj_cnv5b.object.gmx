@@ -32,7 +32,7 @@ alarm[0]=1
 //Text and counts for strings
 text1 = "Let's see... "
 text2 = "what I supposed, bitemarks in the wrists and neck..." 
-text3 = " seem that our “Friends” aren’t very “select”#with their food, uh Gair?"
+text3 = "seems that our “Friends” aren't very “select”#with their food, uh Gair?"
 text4 = "WOOF"
 
 count1=0;

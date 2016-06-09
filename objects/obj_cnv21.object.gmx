@@ -40,8 +40,10 @@ count3=0;
 
 
 ready=false;
-
+status=0
+n=0
 obj_player.cambio=true;
+obj_player.stopped=true;
 </string>
           </argument>
         </arguments>
@@ -122,8 +124,11 @@ alarm[0]=1
     }
 }
 
+
+if line==2 script_execute(cinematic8);
+
 //React to inputs
-if (line&lt;4 &amp;&amp; keyboard_check_pressed(ord('A')) &amp;&amp; ready=true) {
+if ((line==1 || line == 3) &amp;&amp; keyboard_check_pressed(ord('A')) &amp;&amp; ready=true) {
     line+=1;
 }
 
@@ -136,15 +141,10 @@ BarUp.up=true;
 BarUp.down=false;
 }
 
-//If contador=5 we blow the object
+
 if line==4 {
-    if instance_exists(obj_cinemabar) obj_cinemabar.finished=true;
-    if !instance_exists(obj_cinemabar){
-        obj_player.Looking="Down"
-        obj_player.stopped=false;
-        instance_destroy();
+    if !instance_exists(obj_fadeOut) instance_create(x,y,obj_fadeOut)
     }
-}
 </string>
           </argument>
         </arguments>
@@ -173,22 +173,20 @@ draw_set_font(fnt_det);
 
 if line==1 {
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"FATHER");
-    draw_text(view_xview+20,view_yview+332,string_copy(text1,1,count1)); //We draw a string according to count1
+    draw_text(view_xview+42,view_yview+301,"KIERON");
+    draw_text(view_xview+20,view_yview+332,string_copy(text1,1,count1)); 
     if count1==string_length(text1) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
     }
 
 if line==2 {
-    draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"EAGLE");
     draw_text(view_xview+20,view_yview+332,string_copy(text2,1,count2));
     count1=0;
-    if count2==string_length(text2) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);
+    
     }
     
 if line==3{
     draw_sprite(spr_cinemaname,0,view_xview+40,view_yview+299)
-    draw_text(view_xview+42,view_yview+301,"EAGLE");
+    draw_text(view_xview+42,view_yview+301,"KIERON");
     draw_text(view_xview+20,view_yview+332,string_copy(text3,1,count3));
     count2=0;
     if count3==string_length(text3) draw_sprite(spr_textArrow,-1,view_xview+544-20,view_yview+416-20);

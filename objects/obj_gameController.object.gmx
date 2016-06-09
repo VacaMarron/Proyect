@@ -41,7 +41,7 @@ last = 0;
 
 noDog=false;
 
-cheese=true;
+cheese=false;
 puzzle1done=false;
 puzzle2done=false;
 dead1=false;
@@ -67,7 +67,66 @@ CNV17=false
 CNV17done=false
 CNV17b=false
 
+gosewer=false;
 stinks=false;
+
+lightsOn1=false;
+lightsOn2=false;
+lightsOn3=false;
+lightsOn4=false;
+
+syllaDead=false;
+
+conti=false;
+bye=0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>bye++;
+if bye=10 game_end();
+alarm[2]=30;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>lightsOn1=true;
 </string>
           </argument>
         </arguments>
@@ -93,27 +152,50 @@ stinks=false;
             <string>if dead2=true &amp;&amp; cartel=true &amp;&amp; forced=true {
     pub=true
 }
-
-if obj_player.y&lt;256 &amp;&amp; obj_player.y&gt;64 &amp;&amp; room=CiudadNorte &amp;&amp; pub=true &amp;&amp; gopub=false &amp;&amp; !instance_exists(obj_cnv5b) &amp;&amp; !instance_exists(obj_cnv6) &amp;&amp; !instance_exists(obj_cnv8){
-    obj_player.stopped=true;
-    instance_create(view_xview+256,view_yview+96,obj_triggerbar);
-    instance_create(x,y,obj_cnv9);
+if instance_exists(obj_player){
+    if obj_player.y&lt;256 &amp;&amp; obj_player.y&gt;64 &amp;&amp; room=CiudadNorte &amp;&amp; pub=true &amp;&amp; gopub=false &amp;&amp; !instance_exists(obj_cnv5b) &amp;&amp; !instance_exists(obj_cnv6) &amp;&amp; !instance_exists(obj_cnv8){
+        obj_player.stopped=true;
+        instance_create(view_xview+256,view_yview+96,obj_triggerbar);
+        instance_create(x,y,obj_cnv9);
+    }
 }
 
-
-if scary=false &amp;&amp; obj_player.x&gt;64 &amp;&amp; room=CiudadEste {
-    obj_player.stopped=true
-    obj_player.sprite_index=spr_player_ls
-    obj_dog.sprite_index=spr_dog_rs
-    instance_create(x,y,obj_cnv7)
+if instance_exists(obj_player){
+    if scary=false &amp;&amp; obj_player.x&gt;64 &amp;&amp; room=CiudadEste &amp;&amp; puzzle2done=false {
+        obj_player.stopped=true
+        obj_player.sprite_index=spr_player_ls
+        obj_dog.sprite_index=spr_dog_rs
+        instance_create(x,y,obj_cnv7)
+    }
 }
 
-if vincentDead=true &amp;&amp; obj_player.x&gt;64 &amp;&amp; room=CiudadEste &amp;&amp; stinks=false{
-    stinks=true;
-    obj_player.stopped=true
-    obj_player.sprite_index=spr_player_rs
-    instance_create(x,y,obj_cnv18)
+if instance_exists(obj_player){
+    if vincentDead=true &amp;&amp; obj_player.x&gt;64 &amp;&amp; room=CiudadEste &amp;&amp; stinks=false &amp;&amp; puzzle2done=false{
+        stinks=true;
+        obj_player.stopped=true
+        obj_player.sprite_index=spr_player_rs
+        instance_create(x,y,obj_cnv18)
+    }
 }
+
+if room=Parque &amp;&amp; last="lago"{
+    if !instance_exists(obj_player){
+        if lightsOn1=true &amp;&amp; lightsOn3=false{
+            lightsOn3=true;
+            instance_create(view_xview+256+16,view_yview+192+64-16,obj_lightEnter);
+            instance_create(view_xview+256,view_yview+192,obj_fadeOutWhite);
+        }
+            if lightsOn2=true &amp;&amp; lightsOn4=false{
+                if !instance_exists(obj_fadeInWhite) {
+                    instance_create(x,y,obj_fadeInWhite);
+                }
+                instance_create(view_xview+256,view_yview+192+32,obj_player)
+                obj_player.stopped=true;
+                if obj_fadeIn.alpha==0 obj_player.stopped=false;
+                instance_create(view_xview+256,view_yview+192,obj_dog)
+            }
+        }
+    }
 </string>
           </argument>
         </arguments>
@@ -229,24 +311,24 @@ if room=Lago &amp;&amp; puzzle1done=false {
 }
 if room=Lago &amp;&amp; puzzle1done=true {
     if !instance_exists(obj_player){
+        instance_create(view_xview+160,view_yview+160,obj_lightMoon);
         instance_create(view_xview+256,view_yview+160,obj_player)
         obj_player.sprite_index=spr_player_ls;
         instance_create(view_xview+256+32,view_yview+160,obj_dog)
         obj_dog.sprite_index=spr_dog_ls;
         obj_player.cinematic=true;
-        //instance_create(x,y,obj_moonlight);
         instance_create(x,y,obj_cnv4);
     }
 }
 
 if room=Parque &amp;&amp; last="lago"{
     if !instance_exists(obj_player){
-        instance_create(view_xview+256,view_yview+192+32,obj_player)
-        instance_create(view_xview+256,view_yview+192,obj_dog)
+        alarm[0]=30*6
     }
 }
 
 if room=Parque &amp;&amp; last="parqueSur"{
+    with(obj_fadeIn) instance_destroy();
     if !instance_exists(obj_player){
         instance_create(view_xview+256,view_yview+384,obj_player)
         obj_player.sprite_index=spr_player_us
@@ -289,13 +371,23 @@ if room=Ciudad &amp;&amp; last="ciudadEste"{
         if noDog=false instance_create(view_xview+512+32,view_yview+192,obj_dog)
     }
 }
-if room=CiudadEste {
+if room=CiudadEste &amp;&amp; puzzle2done=false{
     if !instance_exists(obj_player){
         instance_create(view_xview,view_yview+256,obj_player)
         obj_player.sprite_index=spr_player_rs
         if noDog=false instance_create(view_xview-32,view_yview+256,obj_dog)
     }
 }
+
+if room=CiudadEste &amp;&amp; puzzle2done=true{
+    if !instance_exists(obj_player){
+        with(obj_cloaca) instance_destroy();
+        instance_create(view_xview+224,view_yview+256,obj_player)
+        obj_player.Looking="Right"
+        instance_create(x,y,obj_cnv20);
+    }
+}
+
 
 if room=CiudadNorte &amp;&amp; last="ciudad"{
     if !instance_exists(obj_player){
@@ -340,6 +432,58 @@ if room=Bar {
     }
 }
 
+if room=Alcantarilla {
+    if !instance_exists(obj_player){
+        instance_create(view_xview+0,view_yview+256,obj_player)
+        obj_player.Looking="Right" 
+    }
+}
+
+if room=AlcantarillaCajas &amp;&amp; syllaDead=false{
+    if !instance_exists(obj_player){
+        instance_create(view_xview+0,view_yview+256,obj_player)
+        obj_player.Looking="Right"
+        instance_create(x,y,obj_cnv21)
+    }
+}
+    
+
+if room=Auxa room_goto(Alcantarilla);
+
+if room=cinematicfinal1 {
+    instance_create(x,y,obj_cnv22);
+    }
+    
+if room=Continuara &amp;&amp; conti=false{
+    alarm[2]=1;
+    conti=true;
+    }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_set_color(c_white)
+if instance_exists(obj_cnv17){
+    if obj_cnv17.p=1 || obj_cnv17.p=3 || obj_cnv17.p=5 || obj_cnv17.p=7 || obj_cnv17.p=9 draw_sprite(spr_whitefull,0,view_xview,view_yview)
+}
 </string>
           </argument>
         </arguments>
